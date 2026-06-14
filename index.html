@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contos da Adega</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="inner">
+            <h1>CONTOS DA ADEGA</h1>
+            <div class="links">
+                <a href="#colecao" class="hide-mobile">A Coleção</a>
+                <a href="#historias" class="hide-mobile">Histórias</a>
+                <a href="#sac" class="hide-mobile">SAC</a>
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">CONTOS</h1>
+            <h2 class="hero-subtitle">DA ADEGA</h2>
+            <p class="hero-tagline">NARRATIVAS ENVELHECIDAS</p>
+            <a href="#colecao" class="hero-btn">EXPLORAR COLEÇÃO</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>CONTOS<br>DA ADEGA</h3>
+                <p style="color: var(--text-primary); font-size: 0.875rem; margin-top: 0.5rem;">Narrativas envelhecidas desde 1998</p>
+            </div>
+            <div>
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="#">A Coleção</a></li>
+                    <li><a href="#">Histórias</a></li>
+                    <li><a href="#">Os Guardiões</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>SUPORTE</h4>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Localização</a></li>
+                    <li><a href="#">SAC</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>CRÔNICAS DA ADEGA</h4>
+                <p style="color: var(--text-primary); font-size: 0.875rem; margin-bottom: 0.75rem;">Receba narrativas exclusivas</p>
+                <div class="newsletter" style="display: flex;">
+                    <input type="email" placeholder="seu@email.com">
+                    <button>→</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Contos da Adega. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+
+        revealElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
