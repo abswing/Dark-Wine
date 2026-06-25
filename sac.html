@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAC — Contos da Adega</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-dw text-soft font-sans overflow-x-hidden">
+    <div id="scrollProgress" aria-hidden="true"></div>
+
+    <button
+      id="backToTop"
+      aria-label="Voltar ao topo"
+      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10 rounded-full bg-gold text-dw flex items-center justify-center z-[999] cursor-pointer hover:bg-gold-l hover:-translate-y-1 transition-all duration-300"
+    >
+      <i class="bi bi-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- NAVBAR -->
+    <header>
+      <nav id="mainNav" aria-label="Navegação principal">
+        <div
+          class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4"
+        >
+          <a
+            href="index.html"
+            class="font-serif text-white text-sm sm:text-base md:text-xl tracking-[0.2em] no-underline shrink-0"
+            >CONTOS DA ADEGA</a
+          >
+          <ul
+            class="hidden lg:flex items-center gap-5 xl:gap-6 list-none m-0 p-0"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
+                >Início</a
+              >
+            </li>
+            <li>
+              <a
+                href="collection.html"
+                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
+                >A Coleção</a
+              >
+            </li>
+            <li>
+              <a
+                href="club.html"
+                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
+                >Clube</a
+              >
+            </li>
+            <li class="border-r border-divider pr-5 xl:pr-6">
+              <a
+                href="sac.html"
+                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300 active-link"
+                >SAC</a
+              >
+            </li>
+            <li class="flex items-center gap-4 ml-1">
+              <a
+                href="#"
+                class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
+                aria-label="Buscar"
+                ><i class="bi bi-search" aria-hidden="true"></i
+              ></a>
+              <a
+                href="#"
+                class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
+                aria-label="Minha conta"
+                data-open-modal
+                ><i class="bi bi-person" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+          <button
+            id="menuToggle"
+            class="lg:hidden text-white text-2xl bg-transparent border-0 cursor-pointer p-1 -mr-1"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <i class="bi bi-list" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div
+          id="mobileMenu"
+          class="lg:hidden mx-2 mt-1 bg-menu/[0.97] backdrop-blur-lg border border-gold/10 rounded-2xl shadow-[0_1rem_2.5rem_rgba(0,0,0,0.7)] pb-2"
+        >
+          <ul class="list-none m-0 p-0">
+            <li>
+              <a
+                href="index.html"
+                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
+                >Início</a
+              >
+            </li>
+            <li>
+              <a
+                href="collection.html"
+                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
+                >A Coleção</a
+              >
+            </li>
+            <li>
+              <a
+                href="club.html"
+                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
+                >Clube</a
+              >
+            </li>
+            <li>
+              <a
+                href="sac.html"
+                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
+                >SAC</a
+              >
+            </li>
+            <li
+              class="flex justify-center gap-8 py-3 border-t border-white/[0.05] mt-2 mx-2"
+            >
+              <a
+                href="#"
+                class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
+                aria-label="Buscar"
+              >
+                <i class="bi bi-search" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
+                aria-label="Minha conta"
+                data-open-modal
+              >
+                <i class="bi bi-person" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12">
+        <!-- Cabeçalho -->
+        <div
+          class="pt-[6.5rem] md:pt-[7.5rem] pb-12 border-b border-white/[0.06]"
+        >
+          <h1
+            class="font-serif text-[clamp(2.75rem,7vw,5rem)] leading-[0.92] text-white tracking-[-0.02em]"
+          >
+            Fale<br /><em class="italic text-gold">Conosco</em>
+          </h1>
+        </div>
+
+        <!-- Formulário + Contato -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-16 lg:gap-24 py-16 md:py-24"
+        >
+          <div class="reveal">
+            <p class="text-wgray text-sm leading-relaxed mb-10 max-w-xs">
+              Nossa equipe responde em até 24 horas úteis.
+            </p>
+            <address class="not-italic flex flex-col gap-3">
+              <a
+                href="mailto:contato@contosadega.com.br"
+                class="text-soft text-sm no-underline hover:text-gold transition-colors duration-300"
+              >
+                contato@contosadega.com.br
+              </a>
+              <a
+                href="tel:+5511999990000"
+                class="text-soft text-sm no-underline hover:text-gold transition-colors duration-300"
+              >
+                +55 (11) 9 9999-0000
+              </a>
+              <span class="text-wgray text-sm">Seg–Sex, 9h–18h</span>
+            </address>
+          </div>
+
+          <form
+            id="sacForm"
+            novalidate
+            class="reveal delay-2 flex flex-col gap-5"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="sacName" class="text-wgray text-xs block mb-2 ml-1"
+                  >Nome</label
+                >
+                <input
+                  type="text"
+                  id="sacName"
+                  name="name"
+                  class="custom-input"
+                  placeholder="Seu nome completo"
+                  autocomplete="name"
+                />
+              </div>
+              <div>
+                <label for="sacEmail" class="text-wgray text-xs block mb-2 ml-1"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="sacEmail"
+                  name="email"
+                  class="custom-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="sacSubject" class="text-wgray text-xs block mb-2 ml-1"
+                >Assunto</label
+              >
+              <select id="sacSubject" name="subject" class="custom-input">
+                <option value="" disabled selected>Selecione um assunto</option>
+                <option value="pedidos">Pedidos e entregas</option>
+                <option value="club">Clube de assinatura</option>
+                <option value="trocas">Trocas e devoluções</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
+            <div>
+              <label for="sacMessage" class="text-wgray text-xs block mb-2 ml-1"
+                >Mensagem</label
+              >
+              <textarea
+                id="sacMessage"
+                name="message"
+                class="custom-input"
+                rows="6"
+                placeholder="Como podemos ajudar?"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-3.5 bg-gold text-dw font-bold font-sans uppercase tracking-widest text-xs rounded-full cursor-pointer border-0 transition-all duration-300 hover:bg-gold-l hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
+            >
+              Enviar Mensagem
+            </button>
+          </form>
+        </div>
+
+        <!-- FAQ -->
+        <div class="border-t border-white/[0.06] pb-16 sm:pb-20">
+          <p
+            class="text-wgray text-xs uppercase tracking-widest py-8 pb-4 border-b border-white/[0.06]"
+          >
+            Dúvidas frequentes
+          </p>
+
+          <div class="max-w-[52rem]">
+            <div class="faq-item border-t border-white/[0.06] py-7">
+              <div
+                class="faq-q-row flex justify-between items-start gap-8 cursor-pointer"
+              >
+                <span
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)] text-white"
+                  >Qual o prazo de entrega?</span
+                >
+                <span
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg leading-none mt-[0.1rem]"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a-wrap">
+                <div class="faq-a-inner">
+                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
+                    Para capitais, 3 a 5 dias úteis. Para o interior, até 7 dias
+                    úteis. Todas as entregas chegam em embalagem térmica.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-white/[0.06] py-7">
+              <div
+                class="faq-q-row flex justify-between items-start gap-8 cursor-pointer"
+              >
+                <span
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)] text-white"
+                  >Como rastreio meu pedido?</span
+                >
+                <span
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg leading-none mt-[0.1rem]"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a-wrap">
+                <div class="faq-a-inner">
+                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
+                    Após o despacho, você recebe um e-mail com o código de
+                    rastreamento. Também é possível acompanhar pelo painel da
+                    sua conta.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-white/[0.06] py-7">
+              <div
+                class="faq-q-row flex justify-between items-start gap-8 cursor-pointer"
+              >
+                <span
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)] text-white"
+                  >Posso trocar ou devolver?</span
+                >
+                <span
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg leading-none mt-[0.1rem]"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a-wrap">
+                <div class="faq-a-inner">
+                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
+                    Aceitamos devoluções em até 7 dias corridos do recebimento,
+                    com o produto lacrado. Entre em contato pelo e-mail ou
+                    telefone para iniciar.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border-t border-white/[0.06] border-b border-white/[0.06] py-7"
+            >
+              <div
+                class="faq-q-row flex justify-between items-start gap-8 cursor-pointer"
+              >
+                <span
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)] text-white"
+                  >Entregam para todo o Brasil?</span
+                >
+                <span
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg leading-none mt-[0.1rem]"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a-wrap">
+                <div class="faq-a-inner">
+                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
+                    Sim. Membros do Clube da Adega têm frete grátis. Para
+                    compras avulsas, o frete é calculado no checkout pelo CEP.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-fw text-white pt-10 pb-6 border-t border-white/[0.05]">
+      <div class="max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12">
+        <div
+          class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8"
+        >
+          <p class="font-serif text-xl leading-tight">CONTOS<br />DA ADEGA</p>
+          <nav aria-label="Links do rodapé">
+            <ul class="flex flex-wrap gap-x-6 gap-y-2 list-none m-0 p-0">
+              <li>
+                <a
+                  href="collection.html"
+                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  >A Coleção</a
+                >
+              </li>
+              <li>
+                <a
+                  href="club.html"
+                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  >Clube</a
+                >
+              </li>
+              <li>
+                <a
+                  href="sac.html"
+                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  >SAC</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  >Privacidade</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/[0.05] pt-5"
+        >
+          <small class="text-white/40 text-xs"
+            >&copy; 2026 Contos da Adega. Todos os direitos reservados.</small
+          >
+          <ul class="flex gap-4 list-none m-0 p-0">
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg transition-colors duration-300"
+                aria-label="Twitter / X"
+                ><i class="bi bi-twitter-x" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg transition-colors duration-300"
+                aria-label="Instagram"
+                ><i class="bi bi-instagram" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg transition-colors duration-300"
+                aria-label="YouTube"
+                ><i class="bi bi-youtube" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div
+      id="authModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div
+        class="relative w-full max-w-md max-h-[90vh] overflow-y-auto bg-modal/[0.96] backdrop-blur-xl border border-gold-l/[0.15] rounded-2xl overflow-hidden shadow-[0_1.875rem_3.75rem_rgba(0,0,0,0.8)]"
+      >
+        <div
+          class="h-[3px] bg-gradient-to-r from-gold-d via-gold to-gold-d"
+          aria-hidden="true"
+        ></div>
+        <button
+          id="closeModal"
+          class="absolute top-4 right-4 text-white/60 hover:text-white text-xl bg-transparent border-0 cursor-pointer z-10 transition-colors duration-300 p-1"
+          aria-label="Fechar"
+        >
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+        <div class="text-center pt-8 pb-3 px-4">
+          <h2
+            id="modalTitle"
+            class="font-serif text-gold tracking-[0.15em] text-base"
+          >
+            CONTOS DA ADEGA
+          </h2>
+          <p class="text-wgray text-sm mt-1">Acesse sua coleção</p>
+        </div>
+        <div
+          class="flex justify-center gap-8 px-4 mb-4"
+          role="tablist"
+          aria-label="Autenticação"
+        >
+          <button
+            class="auth-tab text-gold bg-transparent text-xs uppercase tracking-widest cursor-pointer border-0 active"
+            data-target="#loginPane"
+            role="tab"
+            aria-controls="loginPane"
+            aria-selected="true"
+          >
+            Entrar
+          </button>
+          <button
+            class="auth-tab text-wgray bg-transparent text-xs uppercase tracking-widest cursor-pointer border-0"
+            data-target="#registerPane"
+            role="tab"
+            aria-controls="registerPane"
+            aria-selected="false"
+          >
+            Registrar
+          </button>
+        </div>
+        <div class="px-6 pb-8">
+          <div id="authMessage" class="hidden" role="alert"></div>
+          <div id="loginPane" class="tab-pane active" role="tabpanel">
+            <form id="loginForm" novalidate class="flex flex-col gap-4">
+              <div>
+                <label
+                  for="loginEmail"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="loginEmail"
+                  name="email"
+                  class="custom-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                />
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <label for="loginPassword" class="text-wgray text-xs ml-1"
+                    >Senha</label
+                  >
+                  <a
+                    href="#"
+                    class="text-gold text-xs no-underline hover:underline"
+                    >Esqueceu?</a
+                  >
+                </div>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="password"
+                  class="custom-input"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 bg-gold text-dw font-bold uppercase tracking-widest text-xs rounded-full cursor-pointer border-0 hover:bg-gold-l transition-colors duration-300"
+              >
+                Entrar
+              </button>
+            </form>
+          </div>
+          <div id="registerPane" class="tab-pane" role="tabpanel">
+            <form id="registerForm" novalidate class="flex flex-col gap-4">
+              <div>
+                <label for="regName" class="text-wgray text-xs block mb-1 ml-1"
+                  >Nome</label
+                >
+                <input
+                  type="text"
+                  id="regName"
+                  name="name"
+                  class="custom-input"
+                  placeholder="Seu nome"
+                  autocomplete="name"
+                />
+              </div>
+              <div>
+                <label for="regEmail" class="text-wgray text-xs block mb-1 ml-1"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="regEmail"
+                  name="email"
+                  class="custom-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                />
+              </div>
+              <div>
+                <label
+                  for="regPassword"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Senha</label
+                >
+                <input
+                  type="password"
+                  id="regPassword"
+                  name="password"
+                  class="custom-input"
+                  placeholder="Crie uma senha"
+                  autocomplete="new-password"
+                />
+                <div class="password-strength mt-2">
+                  <div class="password-strength-bar" id="strengthBar"></div>
+                </div>
+                <small
+                  id="strengthText"
+                  class="text-xs ml-1"
+                  aria-live="polite"
+                ></small>
+              </div>
+              <div>
+                <label
+                  for="regConfirmPassword"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Confirmar Senha</label
+                >
+                <input
+                  type="password"
+                  id="regConfirmPassword"
+                  name="confirmPassword"
+                  class="custom-input"
+                  placeholder="Repita a senha"
+                  autocomplete="new-password"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 bg-gold text-dw font-bold uppercase tracking-widest text-xs rounded-full cursor-pointer border-0 hover:bg-gold-l transition-colors duration-300"
+              >
+                Criar Conta
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastNotif" role="status" aria-live="polite">
+      <span id="toastBody" class="text-sm"></span>
+      <button
+        id="toastClose"
+        class="bg-transparent border-0 text-white/50 hover:text-white cursor-pointer text-lg flex-shrink-0 p-1"
+        aria-label="Fechar"
+      >
+        &times;
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        item.querySelector('.faq-q-row').addEventListener('click', () => {
+          const isOpen = item.classList.contains('open')
+          document
+            .querySelectorAll('.faq-item.open')
+            .forEach((o) => o.classList.remove('open'))
+          if (!isOpen) item.classList.add('open')
+        })
+      })
+    </script>
+  </body>
+</html>
