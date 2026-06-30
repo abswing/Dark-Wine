@@ -2,6 +2,14 @@
 
 Site fictício temático de vinhos com design editorial e atmosfera sofisticada.
 
+## Tech Stack
+
+- **Estrutura**: HTML5,
+- **Estilo**: Tailwind CSS + CSS3,
+- **Ícones**: Bootstrap Icons,
+- **Bibliotecas**: Swiper.js,
+- **Scripts**: JavaScript vanilla,
+
 ## Páginas
 
 | Arquivo | Descrição |
@@ -10,13 +18,3 @@ Site fictício temático de vinhos com design editorial e atmosfera sofisticada.
 | `collection.html` | A Coleção — catálogo de vinhos com filtros por tipo |
 | `club.html` | Clube da Adega — planos de assinatura |
 | `sac.html` | Atendimento ao Cliente — formulário de contato |
-
-## Tech Stack
-
-| Categoria | Tecnologia |
-| --- | --- |
-| Estrutura | HTML5 |
-| Estilo | Tailwind CSS + CSS3 |
-| Ícones | Bootstrap Icons |
-| Bibliotecas | Swiper.js |
-| Scripts | JavaScript vanilla |
