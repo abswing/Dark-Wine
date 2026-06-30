@@ -88,6 +88,10 @@
 #mobileMenu.open {
   display: block;
 }
+#mobileMenu .mobile-active {
+  color: #c9923a;
+  background: rgba(201, 146, 58, 0.06);
+}
 
 /* ── Hero animations ─────────────────────────────── */
 @keyframes fadeUp {

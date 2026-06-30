@@ -78,24 +78,16 @@ document.addEventListener('DOMContentLoaded', function () {
       a.addEventListener('click', () => mobileMenu.classList.remove('open')),
     )
 
-  /* ── Active nav link on scroll ──────────────────── */
-  const sections = document.querySelectorAll('section[id]')
-  const navLinks = document.querySelectorAll(".nav-link[href^='#']")
-  const activeObs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting)
-          navLinks.forEach((link) =>
-            link.classList.toggle(
-              'active-link',
-              link.getAttribute('href').replace('#', '') === entry.target.id,
-            ),
-          )
-      })
-    },
-    { threshold: 0.4 },
-  )
-  sections.forEach((s) => activeObs.observe(s))
+  /* ── Active nav link by current page ───────────── */
+  const pageFile = window.location.pathname.split('/').pop() || 'index.html'
+  const pageHref =
+    pageFile === 'index.html' || pageFile === '' ? '#inicio' : pageFile
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    link.classList.toggle('active-link', link.getAttribute('href') === pageHref)
+  })
+  document.querySelectorAll('#mobileMenu a').forEach((link) => {
+    link.classList.toggle('mobile-active', link.getAttribute('href') === pageHref)
+  })
 
   /* ── Reveal on scroll ───────────────────────────── */
   const revealObs = new IntersectionObserver(
@@ -140,21 +132,23 @@ document.addEventListener('DOMContentLoaded', function () {
     .forEach((el) => statsObs.observe(el))
 
   /* ── Swiper gallery ─────────────────────────────── */
-  new Swiper('.gallery-swiper', {
-    slidesPerView: 1.2,
-    spaceBetween: 16,
-    grabCursor: true,
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      576: { slidesPerView: 1.8, spaceBetween: 16 },
-      768: { slidesPerView: 2, spaceBetween: 20 },
-      992: { slidesPerView: 3, spaceBetween: 24 },
-    },
-  })
+  if (typeof Swiper !== 'undefined' && document.querySelector('.gallery-swiper')) {
+    new Swiper('.gallery-swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+      grabCursor: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        576: { slidesPerView: 1.8, spaceBetween: 16 },
+        768: { slidesPerView: 2, spaceBetween: 20 },
+        992: { slidesPerView: 3, spaceBetween: 24 },
+      },
+    })
+  }
 
   /* ── Testimonials ───────────────────────────────── */
   const slides = document.querySelectorAll('.testimonial-slide')
@@ -243,6 +237,14 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
+  /* ── Date of birth: max = 18 years ago ─────────── */
+  const regDobField = document.getElementById('regDob')
+  if (regDobField) {
+    const maxDate = new Date()
+    maxDate.setFullYear(maxDate.getFullYear() - 18)
+    regDobField.max = maxDate.toISOString().split('T')[0]
+  }
+
   /* ── Auth message ───────────────────────────────── */
   const authMsg = document.getElementById('authMessage')
   function showAuthMsg(msg, tipo) {
@@ -277,14 +279,13 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Register form ──────────────────────────────── */
   document.getElementById('registerForm')?.addEventListener('submit', (e) => {
     e.preventDefault()
-    const nome = document.getElementById('regName').value.trim()
-    const email = document.getElementById('regEmail').value.trim()
-    const senha = document.getElementById('regPassword').value.trim()
-    const conf = document.getElementById('regConfirmPassword').value.trim()
-    if (!nome || !email || !senha || !conf) {
+    const inputs = [...e.target.querySelectorAll('input, select')]
+    if (inputs.some((f) => !f.value.trim())) {
       showAuthMsg('Preencha todos os campos para se registrar.', 'danger')
       return
     }
+    const senha = document.getElementById('regPassword').value.trim()
+    const conf = document.getElementById('regConfirmPassword').value.trim()
     if (senha.length < 6) {
       showAuthMsg('A senha deve ter pelo menos 6 caracteres.', 'warning')
       return
@@ -323,6 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let valid = true
       fields.forEach((f) => {
         clearFieldError(f)
+        if ('optional' in f.dataset) return
         if (!f.value.trim()) {
           setFieldError(f, 'Campo obrigatório.')
           valid = false

@@ -23,7 +23,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body class="bg-dw text-[#e0e0e0] font-sans overflow-x-hidden">
     <!-- Scroll progress -->
@@ -65,7 +65,7 @@
             </li>
             <li>
               <a
-                href="collection.html"
+                href="pages/collection.html"
                 class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
               >
                 A Coleção
@@ -73,7 +73,7 @@
             </li>
             <li>
               <a
-                href="club.html"
+                href="pages/club.html"
                 class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
               >
                 Clube
@@ -81,13 +81,14 @@
             </li>
             <li class="border-r border-divider pr-5 xl:pr-6">
               <a
-                href="sac.html"
+                href="pages/sac.html"
                 class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
               >
                 SAC
               </a>
             </li>
-            <li class="flex items-center gap-4 ml-1">
+
+            <li>
               <a
                 href="#"
                 class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
@@ -95,6 +96,9 @@
               >
                 <i class="bi bi-search" aria-hidden="true"></i>
               </a>
+            </li>
+
+            <li class="ml-1">
               <a
                 href="#"
                 class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
@@ -128,50 +132,55 @@
               <a
                 href="#inicio"
                 class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-                >Início</a
               >
-            </li>
-            <li>
-              <a
-                href="collection.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-                >A Coleção</a
-              >
-            </li>
-            <li>
-              <a
-                href="club.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-                >Clube</a
-              >
-            </li>
-            <li>
-              <a
-                href="sac.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-                >SAC</a
-              >
-            </li>
-            <li
-              class="flex justify-center gap-8 py-3 border-t border-white/[0.05] mt-2 mx-2"
-            >
-              <a
-                href="#"
-                class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
-                aria-label="Buscar"
-              >
-                <i class="bi bi-search" aria-hidden="true"></i>
+                Início
               </a>
+            </li>
+            <li>
               <a
-                href="#"
-                class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
-                aria-label="Minha conta"
-                data-open-modal
+                href="pages/collection.html"
+                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
               >
-                <i class="bi bi-person" aria-hidden="true"></i>
+                A Coleção
+              </a>
+            </li>
+            <li>
+              <a
+                href="pages/club.html"
+                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
+              >
+                Clube
+              </a>
+            </li>
+            <li>
+              <a
+                href="pages/sac.html"
+                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
+              >
+                SAC
               </a>
             </li>
           </ul>
+
+          <div
+            class="flex justify-center gap-8 py-3 border-t border-white/[0.05] mt-2 mx-2"
+          >
+            <a
+              href="#"
+              class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
+              aria-label="Buscar"
+            >
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
+              aria-label="Minha conta"
+              data-open-modal
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </nav>
     </header>
@@ -188,8 +197,7 @@
       >
         <div
           class="absolute inset-0 bg-[url('./assets/images/home/hero.jpg')] bg-center bg-cover bg-no-repeat"
-          role="img"
-          aria-label="Foto de adega"
+          aria-hidden="true"
         ></div>
         <div
           class="absolute inset-0 bg-gradient-to-b from-sb/70 via-sb/50 to-sb"
@@ -273,6 +281,7 @@
               <img
                 src="./assets/images/home/origin.jpg"
                 alt="Interior de uma adega com barris de carvalho"
+                loading="lazy"
                 class="rounded-2xl w-full h-[13.75rem] sm:h-[18.75rem] md:h-[25rem] lg:h-[32.5rem] object-cover object-center"
               />
             </div>
@@ -312,6 +321,7 @@
                 <img
                   src="./assets/images/home/collection.jpg"
                   alt="Garrafa Château Margaux"
+                  loading="lazy"
                   class="wine-card-img w-full h-full object-cover block transition-transform duration-700"
                 />
               </div>
@@ -336,6 +346,7 @@
                 <img
                   src="./assets/images/home/collection2.jpg"
                   alt="Garrafa Barolo Riserva"
+                  loading="lazy"
                   class="wine-card-img w-full h-full object-cover block transition-transform duration-700"
                 />
               </div>
@@ -360,6 +371,7 @@
                 <img
                   src="./assets/images/home/collection3.jpg"
                   alt="Garrafa Opus One"
+                  loading="lazy"
                   class="wine-card-img w-full h-full object-cover block transition-transform duration-700"
                 />
               </div>
@@ -407,6 +419,7 @@
                   <img
                     src="./assets/images/home/gallery.jpg"
                     alt="Vinhedo ao entardecer"
+                    loading="lazy"
                     class="w-full h-full object-cover block transition-transform duration-500"
                   />
                 </div>
@@ -434,6 +447,7 @@
                   <img
                     src="./assets/images/home/gallery2.jpg"
                     alt="Barris de carvalho em adega"
+                    loading="lazy"
                     class="w-full h-full object-cover block transition-transform duration-500"
                   />
                 </div>
@@ -461,6 +475,7 @@
                   <img
                     src="./assets/images/home/gallery3.jpg"
                     alt="Taças com vinho rosé"
+                    loading="lazy"
                     class="w-full h-full object-cover block transition-transform duration-500"
                   />
                 </div>
@@ -488,6 +503,7 @@
                   <img
                     src="./assets/images/home/gallery4.jpg"
                     alt="Garrafa de vinho em destaque"
+                    loading="lazy"
                     class="w-full h-full object-cover block transition-transform duration-500"
                   />
                 </div>
@@ -671,6 +687,7 @@
               <blockquote class="testimonial-slide active">
                 <div
                   class="text-gold text-xs tracking-[2px] mb-4"
+                  role="img"
                   aria-label="5 estrelas"
                 >
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -708,6 +725,7 @@
               <blockquote class="testimonial-slide">
                 <div
                   class="text-gold text-xs tracking-[2px] mb-4"
+                  role="img"
                   aria-label="5 estrelas"
                 >
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -745,6 +763,7 @@
               <blockquote class="testimonial-slide">
                 <div
                   class="text-gold text-xs tracking-[2px] mb-4"
+                  role="img"
                   aria-label="4.5 estrelas"
                 >
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -841,7 +860,7 @@
               class="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <a
-                href="sac.html"
+                href="pages/sac.html"
                 class="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-dw font-bold font-sans uppercase tracking-widest text-xs rounded-full cursor-pointer no-underline transition-all duration-300 hover:bg-gold-l hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
               >
                 Acessar o SAC
@@ -887,14 +906,14 @@
             <ul class="list-none m-0 p-0 space-y-2">
               <li>
                 <a
-                  href="collection.html"
+                  href="pages/collection.html"
                   class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
                   >A Coleção</a
                 >
               </li>
               <li>
                 <a
-                  href="club.html"
+                  href="pages/club.html"
                   class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
                   >Clube da Adega</a
                 >
@@ -926,14 +945,14 @@
             <ul class="list-none m-0 p-0 space-y-2">
               <li>
                 <a
-                  href="sac.html"
+                  href="pages/sac.html"
                   class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
                   >Contato</a
                 >
               </li>
               <li>
                 <a
-                  href="sac.html"
+                  href="pages/sac.html"
                   class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
                   >SAC</a
                 >
@@ -1093,7 +1112,7 @@
 
           <!-- Login -->
           <div id="loginPane" class="tab-pane active" role="tabpanel">
-            <form id="loginForm" novalidate>
+            <form id="loginForm">
               <div class="mb-4">
                 <label
                   for="loginEmail"
@@ -1107,6 +1126,7 @@
                   class="custom-input"
                   placeholder="seu@email.com"
                   autocomplete="email"
+                  required
                 />
               </div>
               <div class="mb-5 sm:mb-6">
@@ -1129,6 +1149,8 @@
                   class="custom-input"
                   placeholder="••••••••"
                   autocomplete="current-password"
+                  required
+                  minlength="6"
                 />
               </div>
               <button
@@ -1142,7 +1164,7 @@
 
           <!-- Cadastro -->
           <div id="registerPane" class="tab-pane" role="tabpanel">
-            <form id="registerForm" novalidate>
+            <form id="registerForm">
               <div class="mb-3">
                 <label
                   for="regName"
@@ -1154,8 +1176,10 @@
                   id="regName"
                   name="name"
                   class="custom-input"
-                  placeholder="Seu nome"
+                  placeholder="Seu nome completo"
                   autocomplete="name"
+                  required
+                  minlength="3"
                 />
               </div>
               <div class="mb-3">
@@ -1171,7 +1195,66 @@
                   class="custom-input"
                   placeholder="seu@email.com"
                   autocomplete="email"
+                  required
                 />
+              </div>
+              <div class="mb-3">
+                <label
+                  for="regPhone"
+                  class="text-wgray text-xs sm:text-sm block mb-1 ml-1"
+                  >Telefone/WhatsApp</label
+                >
+                <input
+                  type="tel"
+                  id="regPhone"
+                  name="phone"
+                  class="custom-input"
+                  placeholder="+55 (11) 9 9999-0000"
+                  autocomplete="tel"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  for="regCpf"
+                  class="text-wgray text-xs sm:text-sm block mb-1 ml-1"
+                  >CPF</label
+                >
+                <input
+                  type="text"
+                  id="regCpf"
+                  name="cpf"
+                  class="custom-input"
+                  placeholder="000.000.000-00"
+                  required
+                  pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                  title="Formato: 000.000.000-00"
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  for="regDob"
+                  class="text-wgray text-xs sm:text-sm block mb-1 ml-1"
+                  >Data de Nascimento</label
+                >
+                <input
+                  type="date"
+                  id="regDob"
+                  name="dob"
+                  class="custom-input"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  for="regEstado"
+                  class="text-wgray text-xs sm:text-sm block mb-1 ml-1"
+                  >Estado</label
+                >
+                <select id="regEstado" name="estado" class="custom-input" required>
+                  <option value="" disabled selected>Selecione o estado</option>
+                  <option value="AC">AC</option><option value="AL">AL</option><option value="AM">AM</option><option value="AP">AP</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MG">MG</option><option value="MS">MS</option><option value="MT">MT</option><option value="PA">PA</option><option value="PB">PB</option><option value="PE">PE</option><option value="PI">PI</option><option value="PR">PR</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RO">RO</option><option value="RR">RR</option><option value="RS">RS</option><option value="SC">SC</option><option value="SE">SE</option><option value="SP">SP</option><option value="TO">TO</option>
+                </select>
               </div>
               <div class="mb-3">
                 <label
@@ -1186,6 +1269,8 @@
                   class="custom-input"
                   placeholder="Crie uma senha"
                   autocomplete="new-password"
+                  required
+                  minlength="6"
                 />
                 <div
                   class="password-strength mt-2"
@@ -1216,6 +1301,8 @@
                   class="custom-input"
                   placeholder="Repita a senha"
                   autocomplete="new-password"
+                  required
+                  minlength="6"
                 />
               </div>
               <button
@@ -1244,7 +1331,7 @@
       </button>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

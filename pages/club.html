@@ -17,8 +17,8 @@
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind.config.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <script src="../tailwind.config.js"></script>
+    <link rel="stylesheet" href="../styles/style.css" />
   </head>
   <body class="bg-dw text-soft font-sans overflow-x-hidden">
     <div id="scrollProgress" aria-hidden="true"></div>
@@ -34,61 +34,74 @@
     <!-- NAVBAR -->
     <header>
       <nav id="mainNav" aria-label="Navegação principal">
-        <div
-          class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4"
-        >
+        <div class="flex items-center justify-between px-4 sm:px-6 py-3">
           <a
-            href="index.html"
+            href="../index.html"
             class="font-serif text-white text-sm sm:text-base md:text-xl tracking-[0.2em] no-underline shrink-0"
-            >CONTOS DA ADEGA</a
           >
+            CONTOS DA ADEGA
+          </a>
+
+          <!-- Links desktop -->
           <ul
             class="hidden lg:flex items-center gap-5 xl:gap-6 list-none m-0 p-0"
           >
             <li>
               <a
-                href="index.html"
+                href="../index.html"
                 class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-                >Início</a
               >
+                Início
+              </a>
             </li>
             <li>
               <a
                 href="collection.html"
                 class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-                >A Coleção</a
               >
+                A Coleção
+              </a>
             </li>
             <li>
               <a
-                href="clube.html"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300 active-link"
-                >Clube</a
+                href="club.html"
+                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
               >
+                Clube
+              </a>
             </li>
             <li class="border-r border-divider pr-5 xl:pr-6">
               <a
                 href="sac.html"
                 class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-                >SAC</a
               >
+                SAC
+              </a>
             </li>
-            <li class="flex items-center gap-4 ml-1">
+
+            <li>
               <a
                 href="#"
                 class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
                 aria-label="Buscar"
-                ><i class="bi bi-search" aria-hidden="true"></i
-              ></a>
+              >
+                <i class="bi bi-search" aria-hidden="true"></i>
+              </a>
+            </li>
+
+            <li class="ml-1">
               <a
                 href="#"
                 class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
                 aria-label="Minha conta"
                 data-open-modal
-                ><i class="bi bi-person" aria-hidden="true"></i
-              ></a>
+              >
+                <i class="bi bi-person" aria-hidden="true"></i>
+              </a>
             </li>
           </ul>
+
+          <!-- Botão menu mobile -->
           <button
             id="menuToggle"
             class="lg:hidden text-white text-2xl bg-transparent border-0 cursor-pointer p-1 -mr-1"
@@ -99,66 +112,76 @@
             <i class="bi bi-list" aria-hidden="true"></i>
           </button>
         </div>
+
+        <!-- Menu mobile -->
         <div
           id="mobileMenu"
-          class="lg:hidden mx-2 mt-1 bg-menu/[0.97] backdrop-blur-lg border border-gold/10 rounded-2xl shadow-[0_1rem_2.5rem_rgba(0,0,0,0.7)] pb-2"
+          class="lg:hidden mx-2 mt-1 bg-menu/[0.97] backdrop-blur-lg border border-gold/10 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.7)] pb-2"
         >
           <ul class="list-none m-0 p-0">
             <li>
               <a
-                href="index.html"
+                href="../index.html"
                 class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-                >Início</a
               >
+                Início
+              </a>
             </li>
             <li>
               <a
                 href="collection.html"
                 class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-                >A Coleção</a
               >
+                A Coleção
+              </a>
             </li>
             <li>
               <a
-                href="clube.html"
+                href="club.html"
                 class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-                >Clube</a
               >
+                Clube
+              </a>
             </li>
             <li>
               <a
                 href="sac.html"
                 class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-                >SAC</a
               >
-            </li>
-            <li class="flex justify-center gap-8 py-3 border-t border-white/[0.05] mt-2 mx-2">
-              <a
-                href="#"
-                class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
-                aria-label="Buscar"
-              >
-                <i class="bi bi-search" aria-hidden="true"></i>
-              </a>
-              <a
-                href="#"
-                class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
-                aria-label="Minha conta"
-                data-open-modal
-              >
-                <i class="bi bi-person" aria-hidden="true"></i>
+                SAC
               </a>
             </li>
           </ul>
+
+          <div
+            class="flex justify-center gap-8 py-3 border-t border-white/[0.05] mt-2 mx-2"
+          >
+            <a
+              href="#"
+              class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
+              aria-label="Buscar"
+            >
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
+              aria-label="Minha conta"
+              data-open-modal
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </nav>
     </header>
 
     <main>
       <!-- Intro -->
-      <div class="max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div
           class="pt-28 md:pt-36 pb-14 md:pb-20 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-end border-b border-white/[0.06]"
+          id="clube"
         >
           <div>
             <h1
@@ -181,7 +204,7 @@
 
       <!-- Planos -->
       <section class="bg-linen py-16 md:py-20" aria-labelledby="planos-lbl">
-        <div class="max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <p
             class="text-[#9a8a7e] text-[0.6875rem] tracking-[0.16em] uppercase pb-8 border-b border-black/[0.08] mb-8"
             id="planos-lbl"
@@ -335,7 +358,7 @@
         </div>
       </section>
 
-      <div class="max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <!-- Como funciona -->
         <div class="pt-16 sm:pt-20 pb-16 sm:pb-20">
           <p
@@ -542,33 +565,87 @@
     </main>
 
     <!-- RODAPÉ -->
-    <footer class="bg-fw text-white pt-10 pb-6 border-t border-white/[0.05]">
-      <div class="max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12">
+    <footer
+      class="bg-fw text-white pt-12 sm:pt-16 pb-8 border-t border-white/[0.05]"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8"
+          class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1.5fr] gap-8 sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
         >
-          <p class="font-serif text-xl leading-tight">CONTOS<br />DA ADEGA</p>
-          <nav aria-label="Links do rodapé">
-            <ul class="flex flex-wrap gap-x-6 gap-y-2 list-none m-0 p-0">
+          <!-- Brand -->
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-serif text-2xl lg:text-3xl mb-3 leading-tight">
+              CONTOS<br />DA ADEGA
+            </p>
+            <p class="text-wgray text-sm">Narrativas envelhecidas desde 1998</p>
+          </div>
+
+          <!-- Explorar -->
+          <nav aria-label="Links do rodapé – Explorar">
+            <h3
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+            >
+              Explorar
+            </h3>
+            <ul class="list-none m-0 p-0 space-y-2">
               <li>
                 <a
-                  href="collection.html"
+                  href="pages/collection.html"
                   class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
                   >A Coleção</a
                 >
               </li>
               <li>
                 <a
-                  href="clube.html"
+                  href="pages/club.html"
                   class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
-                  >Clube</a
+                  >Clube da Adega</a
                 >
               </li>
               <li>
                 <a
-                  href="sac.html"
+                  href="#testimonials"
+                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  >As Vozes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#process"
+                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  >O Processo</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Suporte -->
+          <nav aria-label="Links do rodapé – Suporte">
+            <h3
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+            >
+              Suporte
+            </h3>
+            <ul class="list-none m-0 p-0 space-y-2">
+              <li>
+                <a
+                  href="pages/sac.html"
+                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  >Contato</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pages/sac.html"
                   class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
                   >SAC</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  >Localização</a
                 >
               </li>
               <li>
@@ -580,18 +657,55 @@
               </li>
             </ul>
           </nav>
+
+          <!-- Newsletter -->
+          <div class="col-span-2 sm:col-span-1 lg:col-span-1">
+            <h3
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+            >
+              Crônicas da Adega
+            </h3>
+            <p class="text-wgray text-sm mb-4">Receba narrativas exclusivas</p>
+            <form class="flex w-full" aria-label="Newsletter">
+              <label for="newsletterEmail" class="sr-only">Seu e-mail</label>
+              <input
+                type="email"
+                id="newsletterEmail"
+                name="newsletter-email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+                class="min-w-0 flex-1 bg-white/[0.05] border border-white/10 rounded-l-full px-3 sm:px-4 py-2 text-white text-sm outline-none transition-colors duration-300 focus:border-gold placeholder:text-white/20"
+              />
+              <button
+                type="submit"
+                class="flex-shrink-0 bg-gold text-dw border-0 px-4 sm:px-6 py-2 rounded-r-full font-semibold text-sm cursor-pointer transition-colors duration-300 hover:bg-gold-l"
+                aria-label="Inscrever"
+              >
+                →
+              </button>
+            </form>
+          </div>
         </div>
+
         <div
           class="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/[0.05] pt-5"
         >
-          <small class="text-white/40 text-xs"
-            >&copy; 2026 Contos da Adega.</small
-          >
+          <small class="text-white/40 text-xs text-center sm:text-left">
+            &copy; 2026 Contos da Adega. Todos os direitos reservados.
+          </small>
           <ul class="flex gap-4 list-none m-0 p-0">
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                aria-label="Twitter / X"
+                ><i class="bi bi-twitter-x" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
                 aria-label="Instagram"
                 ><i class="bi bi-instagram" aria-hidden="true"></i
               ></a>
@@ -599,17 +713,17 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg transition-colors duration-300"
-                aria-label="Twitter"
-                ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                aria-label="YouTube"
+                ><i class="bi bi-youtube" aria-hidden="true"></i
               ></a>
             </li>
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg transition-colors duration-300"
-                aria-label="YouTube"
-                ><i class="bi bi-youtube" aria-hidden="true"></i
+                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                aria-label="LinkedIn"
+                ><i class="bi bi-linkedin" aria-hidden="true"></i
               ></a>
             </li>
           </ul>
@@ -674,7 +788,7 @@
         <div class="px-6 pb-8">
           <div id="authMessage" class="hidden" role="alert"></div>
           <div id="loginPane" class="tab-pane active" role="tabpanel">
-            <form id="loginForm" novalidate class="flex flex-col gap-4">
+            <form id="loginForm" class="flex flex-col gap-4">
               <div>
                 <label
                   for="loginEmail"
@@ -688,6 +802,7 @@
                   class="custom-input"
                   placeholder="seu@email.com"
                   autocomplete="email"
+                  required
                 />
               </div>
               <div>
@@ -708,6 +823,8 @@
                   class="custom-input"
                   placeholder="••••••••"
                   autocomplete="current-password"
+                  required
+                  minlength="6"
                 />
               </div>
               <button
@@ -719,18 +836,20 @@
             </form>
           </div>
           <div id="registerPane" class="tab-pane" role="tabpanel">
-            <form id="registerForm" novalidate class="flex flex-col gap-4">
+            <form id="registerForm" class="flex flex-col gap-4">
               <div>
                 <label for="regName" class="text-wgray text-xs block mb-1 ml-1"
-                  >Nome</label
+                  >Nome Completo</label
                 >
                 <input
                   type="text"
                   id="regName"
                   name="name"
                   class="custom-input"
-                  placeholder="Seu nome"
+                  placeholder="Seu nome completo"
                   autocomplete="name"
+                  required
+                  minlength="3"
                 />
               </div>
               <div>
@@ -744,7 +863,91 @@
                   class="custom-input"
                   placeholder="seu@email.com"
                   autocomplete="email"
+                  required
                 />
+              </div>
+              <div>
+                <label for="regPhone" class="text-wgray text-xs block mb-1 ml-1"
+                  >Telefone/WhatsApp</label
+                >
+                <input
+                  type="tel"
+                  id="regPhone"
+                  name="phone"
+                  class="custom-input"
+                  placeholder="+55 (11) 9 9999-0000"
+                  autocomplete="tel"
+                  required
+                />
+              </div>
+              <div>
+                <label for="regCpf" class="text-wgray text-xs block mb-1 ml-1"
+                  >CPF</label
+                >
+                <input
+                  type="text"
+                  id="regCpf"
+                  name="cpf"
+                  class="custom-input"
+                  placeholder="000.000.000-00"
+                  required
+                  pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                  title="Formato: 000.000.000-00"
+                />
+              </div>
+              <div>
+                <label for="regDob" class="text-wgray text-xs block mb-1 ml-1"
+                  >Data de Nascimento</label
+                >
+                <input
+                  type="date"
+                  id="regDob"
+                  name="dob"
+                  class="custom-input"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="regEstado"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Estado</label
+                >
+                <select
+                  id="regEstado"
+                  name="estado"
+                  class="custom-input"
+                  required
+                >
+                  <option value="" disabled selected>Selecione o estado</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AM">AM</option>
+                  <option value="AP">AP</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MG">MG</option>
+                  <option value="MS">MS</option>
+                  <option value="MT">MT</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="PR">PR</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="RS">RS</option>
+                  <option value="SC">SC</option>
+                  <option value="SE">SE</option>
+                  <option value="SP">SP</option>
+                  <option value="TO">TO</option>
+                </select>
               </div>
               <div>
                 <label
@@ -759,6 +962,8 @@
                   class="custom-input"
                   placeholder="Crie uma senha"
                   autocomplete="new-password"
+                  required
+                  minlength="6"
                 />
                 <div class="password-strength mt-2">
                   <div class="password-strength-bar" id="strengthBar"></div>
@@ -782,6 +987,8 @@
                   class="custom-input"
                   placeholder="Repita a senha"
                   autocomplete="new-password"
+                  required
+                  minlength="6"
                 />
               </div>
               <button
@@ -807,7 +1014,7 @@
       </button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../js/script.js" defer></script>
     <script>
       document.querySelectorAll('.faq-item').forEach((item) => {
         item.querySelector('.faq-q-row').addEventListener('click', () => {
