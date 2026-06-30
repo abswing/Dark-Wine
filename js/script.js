@@ -86,7 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
     link.classList.toggle('active-link', link.getAttribute('href') === pageHref)
   })
   document.querySelectorAll('#mobileMenu a').forEach((link) => {
-    link.classList.toggle('mobile-active', link.getAttribute('href') === pageHref)
+    link.classList.toggle(
+      'mobile-active',
+      link.getAttribute('href') === pageHref,
+    )
   })
 
   /* ── Reveal on scroll ───────────────────────────── */
@@ -132,7 +135,10 @@ document.addEventListener('DOMContentLoaded', function () {
     .forEach((el) => statsObs.observe(el))
 
   /* ── Swiper gallery ─────────────────────────────── */
-  if (typeof Swiper !== 'undefined' && document.querySelector('.gallery-swiper')) {
+  if (
+    typeof Swiper !== 'undefined' &&
+    document.querySelector('.gallery-swiper')
+  ) {
     new Swiper('.gallery-swiper', {
       slidesPerView: 1.2,
       spaceBetween: 16,
