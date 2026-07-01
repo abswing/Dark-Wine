@@ -26,151 +26,133 @@
     <button
       id="backToTop"
       aria-label="Voltar ao topo"
-      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10 rounded-full bg-gold text-dw flex items-center justify-center z-[999] cursor-pointer hover:bg-gold-l hover:-translate-y-1 transition-all duration-300"
+      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10
+        rounded-full bg-gold text-dw flex items-center justify-center
+        z-[999] cursor-pointer hover:bg-gold-l hover:-translate-y-1
+        transition-all duration-300"
     >
       <i class="bi bi-arrow-up" aria-hidden="true"></i>
     </button>
 
-    <!-- NAVBAR -->
-    <header>
+    <header class="relative">
       <nav id="mainNav" aria-label="Navegação principal">
         <div class="flex items-center justify-between px-4 sm:px-6 py-3">
           <a
             href="../index.html"
-            class="font-serif text-white text-sm sm:text-base md:text-xl tracking-[0.2em] no-underline shrink-0"
+            class="font-serif text-white text-sm sm:text-base md:text-xl
+              tracking-[0.2em] no-underline shrink-0"
           >
             CONTOS DA ADEGA
           </a>
 
-          <!-- Links desktop -->
-          <ul
-            class="hidden lg:flex items-center gap-5 xl:gap-6 list-none m-0 p-0"
-          >
-            <li>
-              <a
-                href="../index.html"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-              >
-                Início
-              </a>
-            </li>
-            <li>
-              <a
-                href="collection.html"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-              >
-                A Coleção
-              </a>
-            </li>
-            <li>
-              <a
-                href="club.html"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-              >
-                Clube
-              </a>
-            </li>
-            <li class="border-r border-divider pr-5 xl:pr-6">
-              <a
-                href="sac.html"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-              >
-                SAC
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#"
-                class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
-                aria-label="Buscar"
-              >
-                <i class="bi bi-search" aria-hidden="true"></i>
-              </a>
-            </li>
-
-            <li class="ml-1">
-              <a
-                href="#"
-                class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
-                aria-label="Minha conta"
-                data-open-modal
-              >
-                <i class="bi bi-person" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
-
-          <!-- Botão menu mobile -->
           <button
             id="menuToggle"
-            class="lg:hidden text-white text-2xl bg-transparent border-0 cursor-pointer p-1 -mr-1"
+            class="lg:hidden text-white text-2xl bg-transparent border-0
+              cursor-pointer p-1 -mr-1"
             aria-label="Abrir menu"
             aria-expanded="false"
             aria-controls="mobileMenu"
           >
             <i class="bi bi-list" aria-hidden="true"></i>
           </button>
-        </div>
-
-        <!-- Menu mobile -->
-        <div
-          id="mobileMenu"
-          class="lg:hidden mx-2 mt-1 bg-menu/[0.97] backdrop-blur-lg border border-gold/10 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.7)] pb-2"
-        >
-          <ul class="list-none m-0 p-0">
-            <li>
-              <a
-                href="../index.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-              >
-                Início
-              </a>
-            </li>
-            <li>
-              <a
-                href="collection.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-              >
-                A Coleção
-              </a>
-            </li>
-            <li>
-              <a
-                href="club.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-              >
-                Clube
-              </a>
-            </li>
-            <li>
-              <a
-                href="sac.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-              >
-                SAC
-              </a>
-            </li>
-          </ul>
 
           <div
-            class="flex justify-center gap-8 py-3 border-t border-white/[0.05] mt-2 mx-2"
+            id="mobileMenu"
+            class="hidden lg:block absolute lg:static top-full left-0 w-full
+              lg:w-auto z-50 px-2 lg:px-0"
           >
-            <a
-              href="#"
-              class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
-              aria-label="Buscar"
+            <ul
+              class="flex flex-col lg:flex-row lg:items-center list-none m-0
+                p-0 mt-1 lg:mt-0 bg-menu/[0.97] lg:bg-transparent
+                backdrop-blur-lg lg:backdrop-blur-none border border-gold/10
+                lg:border-none rounded-2xl lg:rounded-none
+                shadow-[0_16px_40px_rgba(0,0,0,0.7)] lg:shadow-none pb-2
+                lg:pb-0 lg:gap-5 xl:gap-6"
             >
-              <i class="bi bi-search" aria-hidden="true"></i>
-            </a>
-            <a
-              href="#"
-              class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
-              aria-label="Minha conta"
-              data-open-modal
-            >
-              <i class="bi bi-person" aria-hidden="true"></i>
-            </a>
+              <li>
+                <a
+                  href="../index.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  Início
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="collection.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  A Coleção
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="club.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  Clube
+                </a>
+              </li>
+
+              <li class="lg:border-r lg:border-divider lg:pr-5 xl:pr-6">
+                <a
+                  href="sac.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  SAC
+                </a>
+              </li>
+
+              <li
+                class="flex justify-center lg:items-center gap-8 lg:gap-5
+                  xl:gap-6 py-3 lg:py-0 mt-2 lg:mt-0 mx-2 lg:mx-0 border-t
+                  border-white/[0.05] lg:border-none"
+              >
+                <a
+                  href="#"
+                  class="text-soft hover:text-gold transition-colors
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0"
+                  aria-label="Buscar"
+                >
+                  <i class="bi bi-search" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-soft hover:text-gold transition-colors
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1"
+                  aria-label="Minha conta"
+                  data-open-modal
+                >
+                  <i class="bi bi-person" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -178,20 +160,21 @@
 
     <main>
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <!-- Cabeçalho -->
         <div
-          class="pt-[6.5rem] md:pt-[7.5rem] pb-12 border-b border-white/[0.06]"
+          class="pt-[6.5rem] md:pt-[7.5rem] pb-12 border-b
+            border-white/[0.06]"
         >
           <h1
-            class="font-serif text-[clamp(2.75rem,7vw,5rem)] leading-[0.92] text-white tracking-[-0.02em]"
+            class="font-serif text-[clamp(2.75rem,7vw,5rem)] leading-[0.92]
+              text-white tracking-[-0.02em]"
           >
             Fale<br ><em class="italic text-gold">Conosco</em>
           </h1>
         </div>
 
-        <!-- Formulário + Contato -->
         <div
-          class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-16 lg:gap-24 py-16 md:py-24"
+          class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-16 lg:gap-24
+            py-16 md:py-24"
         >
           <div class="reveal">
             <p class="text-wgray text-sm leading-relaxed mb-10 max-w-xs">
@@ -200,13 +183,15 @@
             <address class="not-italic flex flex-col gap-3">
               <a
                 href="mailto:contato@contosadega.com.br"
-                class="text-soft text-sm no-underline hover:text-gold transition-colors duration-300"
+                class="text-soft text-sm no-underline hover:text-gold
+                  transition-colors duration-300"
               >
                 contato@contosadega.com.br
               </a>
               <a
                 href="tel:+5511999990000"
-                class="text-soft text-sm no-underline hover:text-gold transition-colors duration-300"
+                class="text-soft text-sm no-underline hover:text-gold
+                  transition-colors duration-300"
               >
                 +55 (11) 9 9999-0000
               </a>
@@ -349,17 +334,21 @@
             </div>
             <button
               type="submit"
-              class="w-full py-3.5 bg-gold text-dw font-bold font-sans uppercase tracking-widest text-xs rounded-full cursor-pointer border-0 transition-all duration-300 hover:bg-gold-l hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
+              class="w-full py-3.5 bg-gold text-dw font-bold font-sans
+                uppercase tracking-widest text-xs rounded-full
+                cursor-pointer border-0 transition-all duration-300
+                hover:bg-gold-l hover:-translate-y-0.5
+                hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
             >
               Enviar Mensagem
             </button>
           </form>
         </div>
 
-        <!-- FAQ -->
         <div class="border-t border-white/[0.06] pb-16 sm:pb-20">
           <p
-            class="text-wgray text-xs uppercase tracking-widest py-8 pb-4 border-b border-white/[0.06]"
+            class="text-wgray text-xs uppercase tracking-widest py-8 pb-4
+              border-b border-white/[0.06]"
           >
             Dúvidas frequentes
           </p>
@@ -367,14 +356,17 @@
           <div class="max-w-[52rem]">
             <div class="faq-item border-t border-white/[0.06] py-7">
               <div
-                class="faq-q-row flex justify-between items-start gap-8 cursor-pointer"
+                class="faq-q-row flex justify-between items-start gap-8
+                  cursor-pointer"
               >
                 <span
-                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)] text-white"
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
+                    text-white"
                   >Qual o prazo de entrega?</span
                 >
                 <span
-                  class="faq-plus flex-shrink-0 text-white/25 text-lg leading-none mt-[0.1rem]"
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg
+                    leading-none mt-[0.1rem]"
                   >+</span
                 >
               </div>
@@ -390,14 +382,17 @@
 
             <div class="faq-item border-t border-white/[0.06] py-7">
               <div
-                class="faq-q-row flex justify-between items-start gap-8 cursor-pointer"
+                class="faq-q-row flex justify-between items-start gap-8
+                  cursor-pointer"
               >
                 <span
-                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)] text-white"
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
+                    text-white"
                   >Como rastreio meu pedido?</span
                 >
                 <span
-                  class="faq-plus flex-shrink-0 text-white/25 text-lg leading-none mt-[0.1rem]"
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg
+                    leading-none mt-[0.1rem]"
                   >+</span
                 >
               </div>
@@ -414,14 +409,17 @@
 
             <div class="faq-item border-t border-white/[0.06] py-7">
               <div
-                class="faq-q-row flex justify-between items-start gap-8 cursor-pointer"
+                class="faq-q-row flex justify-between items-start gap-8
+                  cursor-pointer"
               >
                 <span
-                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)] text-white"
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
+                    text-white"
                   >Posso trocar ou devolver?</span
                 >
                 <span
-                  class="faq-plus flex-shrink-0 text-white/25 text-lg leading-none mt-[0.1rem]"
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg
+                    leading-none mt-[0.1rem]"
                   >+</span
                 >
               </div>
@@ -436,18 +434,19 @@
               </div>
             </div>
 
-            <div
-              class="faq-item border-t border-b border-white/[0.06] py-7"
-            >
+            <div class="faq-item border-t border-b border-white/[0.06] py-7">
               <div
-                class="faq-q-row flex justify-between items-start gap-8 cursor-pointer"
+                class="faq-q-row flex justify-between items-start gap-8
+                  cursor-pointer"
               >
                 <span
-                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)] text-white"
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
+                    text-white"
                   >Entregam para todo o Brasil?</span
                 >
                 <span
-                  class="faq-plus flex-shrink-0 text-white/25 text-lg leading-none mt-[0.1rem]"
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg
+                    leading-none mt-[0.1rem]"
                   >+</span
                 >
               </div>
@@ -465,15 +464,15 @@
       </div>
     </main>
 
-    <!-- RODAPÉ -->
     <footer
-      class="bg-fw text-white pt-12 sm:pt-16 pb-8 border-t border-white/[0.05]"
+      class="bg-fw text-white pt-12 sm:pt-16 pb-8 border-t
+        border-white/[0.05]"
     >
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1.5fr] gap-8 sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
+          class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1.5fr] gap-8
+            sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
         >
-          <!-- Brand -->
           <div class="col-span-2 sm:col-span-1">
             <p class="font-serif text-2xl lg:text-3xl mb-3 leading-tight">
               CONTOS<br >DA ADEGA
@@ -481,10 +480,10 @@
             <p class="text-wgray text-sm">Narrativas envelhecidas desde 1998</p>
           </div>
 
-          <!-- Explorar -->
           <nav aria-label="Links do rodapé – Explorar">
             <h2
-              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
             >
               Explorar
             </h2>
@@ -492,38 +491,42 @@
               <li>
                 <a
                   href="pages/collection.html"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >A Coleção</a
                 >
               </li>
               <li>
                 <a
                   href="pages/club.html"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >Clube da Adega</a
                 >
               </li>
               <li>
                 <a
                   href="#testimonials"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >As Vozes</a
                 >
               </li>
               <li>
                 <a
                   href="#process"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >O Processo</a
                 >
               </li>
             </ul>
           </nav>
 
-          <!-- Suporte -->
           <nav aria-label="Links do rodapé – Suporte">
             <h2
-              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
             >
               Suporte
             </h2>
@@ -531,38 +534,42 @@
               <li>
                 <a
                   href="pages/sac.html"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >Contato</a
                 >
               </li>
               <li>
                 <a
                   href="pages/sac.html"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >SAC</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >Localização</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >Privacidade</a
                 >
               </li>
             </ul>
           </nav>
 
-          <!-- Newsletter -->
           <div class="col-span-2 sm:col-span-1 lg:col-span-1">
             <h2
-              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
             >
               Crônicas da Adega
             </h2>
@@ -575,11 +582,16 @@
                 name="newsletter-email"
                 placeholder="seu@email.com"
                 autocomplete="email"
-                class="min-w-0 flex-1 bg-white/[0.05] border border-white/10 rounded-l-full px-3 sm:px-4 py-2 text-white text-sm outline-none transition-colors duration-300 focus:border-gold placeholder:text-white/20"
+                class="min-w-0 flex-1 bg-white/[0.05] border border-white/10
+                  rounded-l-full px-3 sm:px-4 py-2 text-white text-sm
+                  outline-none transition-colors duration-300
+                  focus:border-gold placeholder:text-white/20"
               >
               <button
                 type="submit"
-                class="flex-shrink-0 bg-gold text-dw border-0 px-4 sm:px-6 py-2 rounded-r-full font-semibold text-sm cursor-pointer transition-colors duration-300 hover:bg-gold-l"
+                class="flex-shrink-0 bg-gold text-dw border-0 px-4 sm:px-6
+                  py-2 rounded-r-full font-semibold text-sm cursor-pointer
+                  transition-colors duration-300 hover:bg-gold-l"
                 aria-label="Inscrever"
               >
                 →
@@ -589,7 +601,8 @@
         </div>
 
         <div
-          class="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/[0.05] pt-5"
+          class="flex flex-col sm:flex-row items-center justify-between
+            gap-3 border-t border-white/[0.05] pt-5"
         >
           <small class="text-white/40 text-xs text-center sm:text-left">
             &copy; 2026 Contos da Adega. Todos os direitos reservados.
@@ -598,7 +611,8 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
                 aria-label="Twitter / X"
                 ><i class="bi bi-twitter-x" aria-hidden="true"></i
               ></a>
@@ -606,7 +620,8 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
                 aria-label="Instagram"
                 ><i class="bi bi-instagram" aria-hidden="true"></i
               ></a>
@@ -614,7 +629,8 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
                 aria-label="YouTube"
                 ><i class="bi bi-youtube" aria-hidden="true"></i
               ></a>
@@ -622,7 +638,8 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
                 aria-label="LinkedIn"
                 ><i class="bi bi-linkedin" aria-hidden="true"></i
               ></a>
@@ -632,7 +649,6 @@
       </div>
     </footer>
 
-    <!-- MODAL -->
     <div
       id="authModal"
       role="dialog"
@@ -640,7 +656,10 @@
       aria-labelledby="modalTitle"
     >
       <div
-        class="relative w-full max-w-md max-h-[90vh] overflow-y-auto bg-modal/[0.96] backdrop-blur-xl border border-gold-l/[0.15] rounded-2xl overflow-hidden shadow-[0_1.875rem_3.75rem_rgba(0,0,0,0.8)]"
+        class="relative w-full max-w-md max-h-[90vh] overflow-y-auto
+          bg-modal/[0.96] backdrop-blur-xl border border-gold-l/[0.15]
+          rounded-2xl overflow-hidden
+          shadow-[0_1.875rem_3.75rem_rgba(0,0,0,0.8)]"
       >
         <div
           class="h-[3px] bg-gradient-to-r from-gold-d via-gold to-gold-d"
@@ -648,7 +667,9 @@
         ></div>
         <button
           id="closeModal"
-          class="absolute top-4 right-4 text-white/60 hover:text-white text-xl bg-transparent border-0 cursor-pointer z-10 transition-colors duration-300 p-1"
+          class="absolute top-4 right-4 text-white/60 hover:text-white
+            text-xl bg-transparent border-0 cursor-pointer z-10
+            transition-colors duration-300 p-1"
           aria-label="Fechar"
         >
           <i class="bi bi-x-lg" aria-hidden="true"></i>
@@ -668,7 +689,8 @@
           aria-label="Autenticação"
         >
           <button
-            class="auth-tab text-gold bg-transparent text-xs uppercase tracking-widest cursor-pointer border-0 active"
+            class="auth-tab text-gold bg-transparent text-xs uppercase
+              tracking-widest cursor-pointer border-0 active"
             data-target="#loginPane"
             role="tab"
             aria-controls="loginPane"
@@ -677,7 +699,8 @@
             Entrar
           </button>
           <button
-            class="auth-tab text-wgray bg-transparent text-xs uppercase tracking-widest cursor-pointer border-0"
+            class="auth-tab text-wgray bg-transparent text-xs uppercase
+              tracking-widest cursor-pointer border-0"
             data-target="#registerPane"
             role="tab"
             aria-controls="registerPane"
@@ -730,7 +753,9 @@
               </div>
               <button
                 type="submit"
-                class="w-full py-3 bg-gold text-dw font-bold uppercase tracking-widest text-xs rounded-full cursor-pointer border-0 hover:bg-gold-l transition-colors duration-300"
+                class="w-full py-3 bg-gold text-dw font-bold uppercase
+                  tracking-widest text-xs rounded-full cursor-pointer
+                  border-0 hover:bg-gold-l transition-colors duration-300"
               >
                 Entrar
               </button>
@@ -894,7 +919,9 @@
               </div>
               <button
                 type="submit"
-                class="w-full py-3 bg-gold text-dw font-bold uppercase tracking-widest text-xs rounded-full cursor-pointer border-0 hover:bg-gold-l transition-colors duration-300"
+                class="w-full py-3 bg-gold text-dw font-bold uppercase
+                  tracking-widest text-xs rounded-full cursor-pointer
+                  border-0 hover:bg-gold-l transition-colors duration-300"
               >
                 Criar Conta
               </button>
@@ -908,7 +935,8 @@
       <span id="toastBody" class="text-sm"></span>
       <button
         id="toastClose"
-        class="bg-transparent border-0 text-white/50 hover:text-white cursor-pointer text-lg flex-shrink-0 p-1"
+        class="bg-transparent border-0 text-white/50 hover:text-white
+          cursor-pointer text-lg flex-shrink-0 p-1"
         aria-label="Fechar"
       >
         &times;

@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" >
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
     >
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
@@ -23,220 +24,202 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
 
+
     <link rel="stylesheet" href="styles/style.css" >
   </head>
   <body class="bg-dw text-[#e0e0e0] font-sans overflow-x-hidden">
-    <!-- Scroll progress -->
     <div id="scrollProgress" aria-hidden="true"></div>
 
-    <!-- Back to Top -->
     <button
       id="backToTop"
       aria-label="Voltar ao topo"
-      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gold text-dw flex items-center justify-center z-[999] cursor-pointer hover:bg-gold-l hover:-translate-y-1 transition-all duration-300"
+      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-11
+        sm:h-11 rounded-full bg-gold text-dw flex items-center justify-center
+        z-[999] cursor-pointer hover:bg-gold-l transition-all duration-300"
     >
       <i class="bi bi-arrow-up text-sm sm:text-base" aria-hidden="true"></i>
     </button>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       CABEÇALHO / NAVBAR
-  ══════════════════════════════════════════════════════════════ -->
-    <header>
+    <header class="relative">
       <nav id="mainNav" aria-label="Navegação principal">
         <div class="flex items-center justify-between px-4 sm:px-6 py-3">
           <a
             href="#inicio"
-            class="font-serif text-white text-sm sm:text-base md:text-xl tracking-[0.2em] no-underline shrink-0"
+            class="font-serif text-white text-sm sm:text-base md:text-xl
+              tracking-[0.2em] no-underline shrink-0"
           >
             CONTOS DA ADEGA
           </a>
 
-          <!-- Links desktop -->
-          <ul
-            class="hidden lg:flex items-center gap-5 xl:gap-6 list-none m-0 p-0"
-          >
-            <li>
-              <a
-                href="#inicio"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-              >
-                Início
-              </a>
-            </li>
-            <li>
-              <a
-                href="pages/collection.html"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-              >
-                A Coleção
-              </a>
-            </li>
-            <li>
-              <a
-                href="pages/club.html"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-              >
-                Clube
-              </a>
-            </li>
-            <li class="border-r border-divider pr-5 xl:pr-6">
-              <a
-                href="pages/sac.html"
-                class="nav-link text-soft text-sm hover:text-gold transition-colors duration-300"
-              >
-                SAC
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#"
-                class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
-                aria-label="Buscar"
-              >
-                <i class="bi bi-search" aria-hidden="true"></i>
-              </a>
-            </li>
-
-            <li class="ml-1">
-              <a
-                href="#"
-                class="nav-link text-soft hover:text-gold transition-colors duration-300 text-lg"
-                aria-label="Minha conta"
-                data-open-modal
-              >
-                <i class="bi bi-person" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
-
-          <!-- Botão menu mobile -->
           <button
             id="menuToggle"
-            class="lg:hidden text-white text-2xl bg-transparent border-0 cursor-pointer p-1 -mr-1"
+            class="lg:hidden text-white text-2xl bg-transparent border-0
+              cursor-pointer p-1 -mr-1"
             aria-label="Abrir menu"
             aria-expanded="false"
             aria-controls="mobileMenu"
           >
             <i class="bi bi-list" aria-hidden="true"></i>
           </button>
-        </div>
-
-        <!-- Menu mobile -->
-        <div
-          id="mobileMenu"
-          class="lg:hidden mx-2 mt-1 bg-menu/[0.97] backdrop-blur-lg border border-gold/10 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.7)] pb-2"
-        >
-          <ul class="list-none m-0 p-0">
-            <li>
-              <a
-                href="#inicio"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-              >
-                Início
-              </a>
-            </li>
-            <li>
-              <a
-                href="pages/collection.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-              >
-                A Coleção
-              </a>
-            </li>
-            <li>
-              <a
-                href="pages/club.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-              >
-                Clube
-              </a>
-            </li>
-            <li>
-              <a
-                href="pages/sac.html"
-                class="flex items-center justify-center py-[0.8125rem] px-6 text-soft no-underline text-base rounded-[0.625rem] my-0.5 mx-2 min-h-12 transition-all duration-300 hover:bg-gold/[0.08] hover:text-gold"
-              >
-                SAC
-              </a>
-            </li>
-          </ul>
 
           <div
-            class="flex justify-center gap-8 py-3 border-t border-white/[0.05] mt-2 mx-2"
+            id="mobileMenu"
+            class="hidden lg:block absolute lg:static top-full left-0 w-full
+              lg:w-auto z-50 px-2 lg:px-0"
           >
-            <a
-              href="#"
-              class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
-              aria-label="Buscar"
+            <ul
+              class="flex flex-col lg:flex-row lg:items-center list-none m-0
+                p-0 mt-1 lg:mt-0 bg-menu/[0.97] lg:bg-transparent
+                backdrop-blur-lg lg:backdrop-blur-none border border-gold/10
+                lg:border-none rounded-2xl lg:rounded-none
+                shadow-[0_16px_40px_rgba(0,0,0,0.7)] lg:shadow-none pb-2
+                lg:pb-0 lg:gap-5 xl:gap-6"
             >
-              <i class="bi bi-search" aria-hidden="true"></i>
-            </a>
-            <a
-              href="#"
-              class="text-soft hover:text-gold text-xl p-2 transition-colors duration-300"
-              aria-label="Minha conta"
-              data-open-modal
-            >
-              <i class="bi bi-person" aria-hidden="true"></i>
-            </a>
+              <li>
+                <a
+                  href="#inicio"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  Início
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="pages/collection.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  A Coleção
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="pages/club.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  Clube
+                </a>
+              </li>
+
+              <li class="lg:border-r lg:border-divider lg:pr-5 xl:pr-6">
+                <a
+                  href="pages/sac.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  SAC
+                </a>
+              </li>
+
+              <li
+                class="flex justify-center lg:items-center gap-8 lg:gap-5
+                  xl:gap-6 py-3 lg:py-0 mt-2 lg:mt-0 mx-2 lg:mx-0 border-t
+                  border-white/[0.05] lg:border-none"
+              >
+                <a
+                  href="#"
+                  class="text-soft hover:text-gold transition-colors
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0"
+                  aria-label="Buscar"
+                >
+                  <i class="bi bi-search" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-soft hover:text-gold transition-colors
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1"
+                  aria-label="Minha conta"
+                  data-open-modal
+                >
+                  <i class="bi bi-person" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
     </header>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       CONTEÚDO PRINCIPAL
-  ══════════════════════════════════════════════════════════════ -->
     <main>
-      <!-- ─── HERO ─────────────────────────────────────────────── -->
       <section
         id="inicio"
         aria-label="Capa"
-        class="relative h-screen min-h-[31.25rem] flex items-center justify-center overflow-hidden"
+        class="relative h-screen min-h-[31.25rem] flex items-center
+          justify-center overflow-hidden"
       >
         <div
-          class="absolute inset-0 bg-[url('./assets/images/home/hero.jpg')] bg-center bg-cover bg-no-repeat"
+          class="absolute inset-0 bg-[url('./assets/images/home/hero.jpg')]
+            bg-center bg-cover bg-no-repeat"
           aria-hidden="true"
         ></div>
         <div
-          class="absolute inset-0 bg-gradient-to-b from-sb/70 via-sb/50 to-sb"
+          class="absolute inset-0 bg-gradient-to-b from-sb/70 via-sb/50
+            to-sb"
         ></div>
 
         <div class="relative z-10 text-center px-4 sm:px-8 w-full">
           <h1
-            class="hero-title font-serif text-[clamp(2.25rem,9vw,7.5rem)] leading-none text-white tracking-[0.05em]"
+            class="hero-title font-serif text-[clamp(2.25rem,9vw,7.5rem)]
+              leading-none text-white tracking-[0.05em]"
           >
             CONTOS <br >
             DA ADEGA
           </h1>
           <p
-            class="hero-tagline text-[clamp(0.65rem,1.5vw,1.1rem)] tracking-[0.3em] text-cream mt-6 mb-6 sm:mt-8 sm:mb-8"
+            class="hero-tagline text-[clamp(0.65rem,1.5vw,1.1rem)]
+              tracking-[0.3em] text-cream mt-6 mb-6 sm:mt-8 sm:mb-8"
           >
             NARRATIVAS ENVELHECIDAS
           </p>
           <a
             href="#history"
-            class="hero-btn inline-block px-6 sm:px-8 md:px-12 py-3 md:py-4 border border-gold text-gold rounded-full text-xs sm:text-sm tracking-[0.1em] no-underline hover:bg-gold hover:text-dw hover:scale-105 transition-all duration-300"
+            class="hero-btn inline-block px-6 sm:px-8 md:px-12 py-3 md:py-4
+              border border-gold text-gold rounded-full text-xs sm:text-sm
+              tracking-[0.1em] no-underline hover:bg-gold hover:text-dw
+              hover:scale-105 transition-all duration-300"
           >
             EXPLORAR COLEÇÃO
           </a>
         </div>
 
         <div
-          class="scroll-indicator absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          class="scroll-indicator absolute bottom-6 sm:bottom-8 flex flex-col items-center gap-2"
           aria-hidden="true"
         >
           <span class="text-[0.6rem] sm:text-xs tracking-[0.2em] text-cream"
             >SCROLL</span
           >
           <div
-            class="scroll-line w-px h-10 sm:h-12 bg-gradient-to-b from-gold to-transparent"
+            class="scroll-line w-px h-10 sm:h-12 bg-gradient-to-b from-gold
+              to-transparent"
           ></div>
         </div>
       </section>
 
-      <!-- ─── A ORIGEM ──────────────────────────────────────────── -->
       <section
         id="history"
         aria-labelledby="history-title"
@@ -244,17 +227,20 @@
       >
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center"
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16
+              items-center"
           >
             <div class="reveal md:pr-6 lg:pr-10">
               <p
-                class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm font-bold mb-3"
+                class="text-gold uppercase tracking-[0.15em] text-xs
+                  sm:text-sm font-bold mb-3"
               >
                 Capítulo I
               </p>
               <h2
                 id="history-title"
-                class="font-serif text-[clamp(1.75rem,4.5vw,3rem)] leading-tight mb-4 md:mb-6"
+                class="font-serif text-[clamp(1.75rem,4.5vw,3rem)]
+                  leading-tight mb-4 md:mb-6"
               >
                 A Origem
               </h2>
@@ -271,7 +257,12 @@
               </p>
               <a
                 href="#collection"
-                class="inline-block px-5 sm:px-6 py-2 border border-gold text-gold rounded-full text-xs sm:text-sm tracking-widest no-underline hover:bg-gold hover:text-dw hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(220,165,75,0.3)] transition-all duration-300"
+                class="inline-block px-5 sm:px-6 py-2 border border-gold
+                  text-gold rounded-full text-xs sm:text-sm tracking-widest
+                  no-underline hover:bg-gold hover:text-dw
+                  hover:-translate-y-0.5
+                  hover:shadow-[0_8px_24px_rgba(220,165,75,0.3)]
+                  transition-all duration-300"
               >
                 Ver a Coleção
               </a>
@@ -282,14 +273,14 @@
                 src="./assets/images/home/origin.jpg"
                 alt="Interior de uma adega com barris de carvalho"
                 loading="lazy"
-                class="rounded-2xl w-full h-[13.75rem] sm:h-[18.75rem] md:h-[25rem] lg:h-[32.5rem] object-cover object-center"
+                class="rounded-2xl w-full h-[13.75rem] sm:h-[18.75rem]
+                  md:h-[25rem] lg:h-[32.5rem] object-cover object-center"
               >
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─── A TRILOGIA ────────────────────────────────────────── -->
       <section
         id="collection"
         aria-labelledby="collection-title"
@@ -298,7 +289,8 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div class="text-center reveal mb-10 sm:mb-12">
             <p
-              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm font-bold mb-3"
+              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm
+                font-bold mb-3 font-sans"
             >
               Capítulo II
             </p>
@@ -311,10 +303,15 @@
           </div>
 
           <ul
-            class="wine-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 list-none m-0 p-0"
+            class="wine-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+              gap-4 sm:gap-5 list-none m-0 p-0"
           >
             <li
-              class="wine-card reveal rounded-[0.875rem] overflow-hidden bg-white/[0.02] border border-white/[0.06] transition-all duration-[350ms] hover:-translate-y-1.5 hover:shadow-[0_20px_44px_rgba(0,0,0,0.55)] hover:border-gold/20"
+              class="wine-card reveal rounded-[0.875rem] overflow-hidden
+                bg-white/[0.02] border border-white/[0.06] transition-all
+                duration-[350ms] hover:-translate-y-1.5
+                hover:shadow-[0_20px_44px_rgba(0,0,0,0.55)]
+                hover:border-gold/20"
             >
               <div class="wine-card-img-wrap relative overflow-hidden">
                 <div class="wine-card-img-wrap-mask" aria-hidden="true"></div>
@@ -322,7 +319,8 @@
                   src="./assets/images/home/collection.jpg"
                   alt="Garrafa Château Margaux"
                   loading="lazy"
-                  class="wine-card-img w-full h-full object-cover block transition-transform duration-700"
+                  class="wine-card-img w-full h-full object-cover block
+                    transition-transform duration-700"
                 >
               </div>
               <div class="p-5 pb-6">
@@ -339,7 +337,11 @@
             </li>
 
             <li
-              class="wine-card reveal delay-1 rounded-[0.875rem] overflow-hidden bg-white/[0.02] border border-white/[0.06] transition-all duration-[350ms] hover:-translate-y-1.5 hover:shadow-[0_20px_44px_rgba(0,0,0,0.55)] hover:border-gold/20"
+              class="wine-card reveal delay-1 rounded-[0.875rem]
+                overflow-hidden bg-white/[0.02] border border-white/[0.06]
+                transition-all duration-[350ms] hover:-translate-y-1.5
+                hover:shadow-[0_20px_44px_rgba(0,0,0,0.55)]
+                hover:border-gold/20"
             >
               <div class="wine-card-img-wrap relative overflow-hidden">
                 <div class="wine-card-img-wrap-mask" aria-hidden="true"></div>
@@ -347,7 +349,8 @@
                   src="./assets/images/home/collection2.jpg"
                   alt="Garrafa Barolo Riserva"
                   loading="lazy"
-                  class="wine-card-img w-full h-full object-cover block transition-transform duration-700"
+                  class="wine-card-img w-full h-full object-cover block
+                    transition-transform duration-700"
                 >
               </div>
               <div class="p-5 pb-6">
@@ -364,7 +367,11 @@
             </li>
 
             <li
-              class="wine-card reveal delay-2 rounded-[0.875rem] overflow-hidden bg-white/[0.02] border border-white/[0.06] transition-all duration-[350ms] hover:-translate-y-1.5 hover:shadow-[0_20px_44px_rgba(0,0,0,0.55)] hover:border-gold/20"
+              class="wine-card reveal delay-2 rounded-[0.875rem]
+                overflow-hidden bg-white/[0.02] border border-white/[0.06]
+                transition-all duration-[350ms] hover:-translate-y-1.5
+                hover:shadow-[0_20px_44px_rgba(0,0,0,0.55)]
+                hover:border-gold/20"
             >
               <div class="wine-card-img-wrap relative overflow-hidden">
                 <div class="wine-card-img-wrap-mask" aria-hidden="true"></div>
@@ -372,7 +379,8 @@
                   src="./assets/images/home/collection3.jpg"
                   alt="Garrafa Opus One"
                   loading="lazy"
-                  class="wine-card-img w-full h-full object-cover block transition-transform duration-700"
+                  class="wine-card-img w-full h-full object-cover block
+                    transition-transform duration-700"
                 >
               </div>
               <div class="p-5 pb-6">
@@ -389,7 +397,6 @@
         </div>
       </section>
 
-      <!-- ─── GALERIA ───────────────────────────────────────────── -->
       <section
         id="gallery"
         aria-labelledby="gallery-title"
@@ -398,7 +405,8 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div class="text-center reveal mb-10 sm:mb-12">
             <p
-              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm font-bold mb-3"
+              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm
+                font-bold mb-3"
             >
               Capítulo III
             </p>
@@ -414,23 +422,27 @@
             <ul class="swiper-wrapper list-none m-0 p-0">
               <li class="swiper-slide">
                 <div
-                  class="carousel-item-css rounded-2xl overflow-hidden cursor-pointer relative"
+                  class="carousel-item-css rounded-2xl overflow-hidden
+                    cursor-pointer relative"
                 >
                   <img
                     src="./assets/images/home/gallery.jpg"
                     alt="Vinhedo ao entardecer"
                     loading="lazy"
-                    class="w-full h-full object-cover block transition-transform duration-500"
+                    class="w-full h-full object-cover block
+                      transition-transform duration-500"
                   >
                 </div>
                 <div class="pt-3 sm:pt-4 pb-2 px-1">
                   <p
-                    class="text-gold font-sans text-xs tracking-[0.22em] opacity-85 mb-1 sm:mb-2"
+                    class="text-gold font-sans text-xs tracking-[0.22em]
+                      opacity-85 mb-1 sm:mb-2"
                   >
                     01
                   </p>
                   <h3
-                    class="font-serif text-white text-lg sm:text-xl mb-1 sm:mb-2"
+                    class="font-serif text-white text-lg sm:text-xl mb-1
+                      sm:mb-2"
                   >
                     O Terroir
                   </h3>
@@ -442,23 +454,27 @@
 
               <li class="swiper-slide">
                 <div
-                  class="carousel-item-css rounded-2xl overflow-hidden cursor-pointer relative"
+                  class="carousel-item-css rounded-2xl overflow-hidden
+                    cursor-pointer relative"
                 >
                   <img
                     src="./assets/images/home/gallery2.jpg"
                     alt="Barris de carvalho em adega"
                     loading="lazy"
-                    class="w-full h-full object-cover block transition-transform duration-500"
+                    class="w-full h-full object-cover block
+                      transition-transform duration-500"
                   >
                 </div>
                 <div class="pt-3 sm:pt-4 pb-2 px-1">
                   <p
-                    class="text-gold font-sans text-xs tracking-[0.22em] opacity-85 mb-1 sm:mb-2"
+                    class="text-gold font-sans text-xs tracking-[0.22em]
+                      opacity-85 mb-1 sm:mb-2"
                   >
                     02
                   </p>
                   <h3
-                    class="font-serif text-white text-lg sm:text-xl mb-1 sm:mb-2"
+                    class="font-serif text-white text-lg sm:text-xl mb-1
+                      sm:mb-2"
                   >
                     O Envelhecimento
                   </h3>
@@ -470,23 +486,27 @@
 
               <li class="swiper-slide">
                 <div
-                  class="carousel-item-css rounded-2xl overflow-hidden cursor-pointer relative"
+                  class="carousel-item-css rounded-2xl overflow-hidden
+                    cursor-pointer relative"
                 >
                   <img
                     src="./assets/images/home/gallery3.jpg"
                     alt="Taças com vinho rosé"
                     loading="lazy"
-                    class="w-full h-full object-cover block transition-transform duration-500"
+                    class="w-full h-full object-cover block
+                      transition-transform duration-500"
                   >
                 </div>
                 <div class="pt-3 sm:pt-4 pb-2 px-1">
                   <p
-                    class="text-gold font-sans text-xs tracking-[0.22em] opacity-85 mb-1 sm:mb-2"
+                    class="text-gold font-sans text-xs tracking-[0.22em]
+                      opacity-85 mb-1 sm:mb-2"
                   >
                     03
                   </p>
                   <h3
-                    class="font-serif text-white text-lg sm:text-xl mb-1 sm:mb-2"
+                    class="font-serif text-white text-lg sm:text-xl mb-1
+                      sm:mb-2"
                   >
                     A Degustação
                   </h3>
@@ -498,23 +518,27 @@
 
               <li class="swiper-slide">
                 <div
-                  class="carousel-item-css rounded-2xl overflow-hidden cursor-pointer relative"
+                  class="carousel-item-css rounded-2xl overflow-hidden
+                    cursor-pointer relative"
                 >
                   <img
                     src="./assets/images/home/gallery4.jpg"
                     alt="Garrafa de vinho em destaque"
                     loading="lazy"
-                    class="w-full h-full object-cover block transition-transform duration-500"
+                    class="w-full h-full object-cover block
+                      transition-transform duration-500"
                   >
                 </div>
                 <div class="pt-3 sm:pt-4 pb-2 px-1">
                   <p
-                    class="text-gold font-sans text-xs tracking-[0.22em] opacity-85 mb-1 sm:mb-2"
+                    class="text-gold font-sans text-xs tracking-[0.22em]
+                      opacity-85 mb-1 sm:mb-2"
                   >
                     04
                   </p>
                   <h3
-                    class="font-serif text-white text-lg sm:text-xl mb-1 sm:mb-2"
+                    class="font-serif text-white text-lg sm:text-xl mb-1
+                      sm:mb-2"
                   >
                     A Celebração
                   </h3>
@@ -531,7 +555,6 @@
         </div>
       </section>
 
-      <!-- ─── O PROCESSO ────────────────────────────────────────── -->
       <section
         id="process"
         aria-labelledby="process-title"
@@ -540,7 +563,8 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div class="text-center reveal mb-10 sm:mb-12">
             <p
-              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm font-bold mb-3"
+              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm
+                font-bold mb-3"
             >
               Capítulo IV
             </p>
@@ -556,18 +580,27 @@
           </div>
 
           <ol
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 list-none m-0 p-0"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4
+              sm:gap-5 list-none m-0 p-0"
           >
             <li
-              class="reveal relative bg-white/[0.02] border border-white/[0.07] rounded-[1.125rem] p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold-l/[0.28]"
+              class="reveal relative bg-white/[0.02] border
+                border-white/[0.07] rounded-[1.125rem] p-6 sm:p-8
+                transition-all duration-300 hover:-translate-y-1
+                hover:border-gold-l/[0.28]"
             >
               <span
-                class="font-serif text-[4rem] font-bold text-gold/[0.05] absolute top-4 right-5 leading-none select-none pointer-events-none"
+                class="font-serif text-[4rem] font-bold text-gold/[0.05]
+                  absolute top-4 right-5 leading-none select-none
+                  pointer-events-none"
                 aria-hidden="true"
                 >01</span
               >
               <div
-                class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-l/[0.08] border border-gold-l/[0.18] flex items-center justify-center text-gold text-xl mb-4 transition-all duration-300"
+                class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-l/[0.08]
+                  border border-gold-l/[0.18] flex items-center
+                  justify-center text-gold text-xl mb-4 transition-all
+                  duration-300"
                 aria-hidden="true"
               >
                 <i class="bi bi-geo-alt"></i>
@@ -582,15 +615,23 @@
             </li>
 
             <li
-              class="reveal delay-1 relative bg-white/[0.02] border border-white/[0.07] rounded-[1.125rem] p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold-l/[0.28]"
+              class="reveal delay-1 relative bg-white/[0.02] border
+                border-white/[0.07] rounded-[1.125rem] p-6 sm:p-8
+                transition-all duration-300 hover:-translate-y-1
+                hover:border-gold-l/[0.28]"
             >
               <span
-                class="font-serif text-[4rem] font-bold text-gold/[0.05] absolute top-4 right-5 leading-none select-none pointer-events-none"
+                class="font-serif text-[4rem] font-bold text-gold/[0.05]
+                  absolute top-4 right-5 leading-none select-none
+                  pointer-events-none"
                 aria-hidden="true"
                 >02</span
               >
               <div
-                class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-l/[0.08] border border-gold-l/[0.18] flex items-center justify-center text-gold text-xl mb-4 transition-all duration-300"
+                class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-l/[0.08]
+                  border border-gold-l/[0.18] flex items-center
+                  justify-center text-gold text-xl mb-4 transition-all
+                  duration-300"
                 aria-hidden="true"
               >
                 <i class="bi bi-droplet"></i>
@@ -605,15 +646,23 @@
             </li>
 
             <li
-              class="reveal delay-2 relative bg-white/[0.02] border border-white/[0.07] rounded-[1.125rem] p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold-l/[0.28]"
+              class="reveal delay-2 relative bg-white/[0.02] border
+                border-white/[0.07] rounded-[1.125rem] p-6 sm:p-8
+                transition-all duration-300 hover:-translate-y-1
+                hover:border-gold-l/[0.28]"
             >
               <span
-                class="font-serif text-[4rem] font-bold text-gold/[0.05] absolute top-4 right-5 leading-none select-none pointer-events-none"
+                class="font-serif text-[4rem] font-bold text-gold/[0.05]
+                  absolute top-4 right-5 leading-none select-none
+                  pointer-events-none"
                 aria-hidden="true"
                 >03</span
               >
               <div
-                class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-l/[0.08] border border-gold-l/[0.18] flex items-center justify-center text-gold text-xl mb-4 transition-all duration-300"
+                class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-l/[0.08]
+                  border border-gold-l/[0.18] flex items-center
+                  justify-center text-gold text-xl mb-4 transition-all
+                  duration-300"
                 aria-hidden="true"
               >
                 <i class="bi bi-thermometer"></i>
@@ -628,15 +677,23 @@
             </li>
 
             <li
-              class="reveal delay-3 relative bg-white/[0.02] border border-white/[0.07] rounded-[1.125rem] p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold-l/[0.28]"
+              class="reveal delay-3 relative bg-white/[0.02] border
+                border-white/[0.07] rounded-[1.125rem] p-6 sm:p-8
+                transition-all duration-300 hover:-translate-y-1
+                hover:border-gold-l/[0.28]"
             >
               <span
-                class="font-serif text-[4rem] font-bold text-gold/[0.05] absolute top-4 right-5 leading-none select-none pointer-events-none"
+                class="font-serif text-[4rem] font-bold text-gold/[0.05]
+                  absolute top-4 right-5 leading-none select-none
+                  pointer-events-none"
                 aria-hidden="true"
                 >04</span
               >
               <div
-                class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-l/[0.08] border border-gold-l/[0.18] flex items-center justify-center text-gold text-xl mb-4 transition-all duration-300"
+                class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold-l/[0.08]
+                  border border-gold-l/[0.18] flex items-center
+                  justify-center text-gold text-xl mb-4 transition-all
+                  duration-300"
                 aria-hidden="true"
               >
                 <i class="bi bi-box-seam"></i>
@@ -653,7 +710,6 @@
         </div>
       </section>
 
-      <!-- ─── AS VOZES ──────────────────────────────────────────── -->
       <section
         id="testimonials"
         aria-labelledby="testimonials-title"
@@ -662,7 +718,8 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div class="text-center reveal mb-10 sm:mb-12">
             <p
-              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm font-bold mb-3"
+              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm
+                font-bold mb-3"
             >
               Capítulo V
             </p>
@@ -675,10 +732,15 @@
           </div>
 
           <div
-            class="reveal relative max-w-[47.5rem] mx-auto text-center px-4 sm:px-8 md:px-12 py-8 sm:py-12 md:py-14 border border-gold/[0.14] rounded-2xl sm:rounded-[1.5rem] bg-gold/[0.025] overflow-hidden"
+            class="reveal relative max-w-[47.5rem] mx-auto text-center px-4
+              sm:px-8 md:px-12 py-8 sm:py-12 md:py-14 border
+              border-gold/[0.14] rounded-2xl sm:rounded-[1.5rem]
+              bg-gold/[0.025] overflow-hidden"
           >
             <span
-              class="absolute -top-4 left-4 sm:-top-6 sm:left-5 font-serif text-[7rem] sm:text-[9rem] md:text-[13rem] text-gold opacity-[0.045] leading-none pointer-events-none select-none"
+              class="absolute -top-4 left-4 sm:-top-6 sm:left-5 font-serif
+                text-[7rem] sm:text-[9rem] md:text-[13rem] text-gold
+                opacity-[0.045] leading-none pointer-events-none select-none"
               aria-hidden="true"
               >"</span
             >
@@ -697,7 +759,8 @@
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                 </div>
                 <p
-                  class="font-serif text-lg sm:text-xl md:text-2xl leading-relaxed text-linen italic mb-6 sm:mb-8"
+                  class="font-serif text-lg sm:text-xl md:text-2xl
+                    leading-relaxed text-linen italic mb-6 sm:mb-8"
                 >
                   "O Château Margaux que encontrei aqui mudou minha percepção
                   sobre o que um vinho pode ser. Uma narrativa em cada gole, uma
@@ -705,14 +768,18 @@
                 </p>
                 <footer class="inline-flex items-center gap-3">
                   <div
-                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-gold-d to-gold flex items-center justify-center text-dw font-sans text-xs font-semibold flex-shrink-0"
+                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-full
+                      bg-gradient-to-br from-gold-d to-gold flex
+                      items-center justify-center text-dw font-sans text-xs
+                      font-semibold flex-shrink-0"
                     aria-hidden="true"
                   >
                     MR
                   </div>
                   <div class="text-left">
                     <cite
-                      class="font-serif not-italic text-sm sm:text-base block"
+                      class="font-serif not-italic text-sm sm:text-base
+                        block"
                       >Marcos Ribeiro</cite
                     >
                     <span class="text-gold font-sans text-xs sm:text-sm"
@@ -735,7 +802,8 @@
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                 </div>
                 <p
-                  class="font-serif text-lg sm:text-xl md:text-2xl leading-relaxed text-linen italic mb-6 sm:mb-8"
+                  class="font-serif text-lg sm:text-xl md:text-2xl
+                    leading-relaxed text-linen italic mb-6 sm:mb-8"
                 >
                   "A curadoria da Contos da Adega é impecável. Cada rótulo conta
                   uma história. É como ter um sommelier pessoal com décadas de
@@ -743,14 +811,18 @@
                 </p>
                 <footer class="inline-flex items-center gap-3">
                   <div
-                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-gold-d to-gold flex items-center justify-center text-dw font-sans text-xs font-semibold flex-shrink-0"
+                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-full
+                      bg-gradient-to-br from-gold-d to-gold flex
+                      items-center justify-center text-dw font-sans text-xs
+                      font-semibold flex-shrink-0"
                     aria-hidden="true"
                   >
                     AC
                   </div>
                   <div class="text-left">
                     <cite
-                      class="font-serif not-italic text-sm sm:text-base block"
+                      class="font-serif not-italic text-sm sm:text-base
+                        block"
                       >Ana Carolina</cite
                     >
                     <span class="text-gold font-sans text-xs sm:text-sm"
@@ -773,7 +845,8 @@
                   <i class="bi bi-star-half" aria-hidden="true"></i>
                 </div>
                 <p
-                  class="font-serif text-lg sm:text-xl md:text-2xl leading-relaxed text-linen italic mb-6 sm:mb-8"
+                  class="font-serif text-lg sm:text-xl md:text-2xl
+                    leading-relaxed text-linen italic mb-6 sm:mb-8"
                 >
                   "Descobri o Barolo Riserva aqui e nunca mais parei de
                   explorar. O atendimento é excepcional e a seleção está sempre
@@ -781,14 +854,18 @@
                 </p>
                 <footer class="inline-flex items-center gap-3">
                   <div
-                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-gold-d to-gold flex items-center justify-center text-dw font-sans text-xs font-semibold flex-shrink-0"
+                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-full
+                      bg-gradient-to-br from-gold-d to-gold flex
+                      items-center justify-center text-dw font-sans text-xs
+                      font-semibold flex-shrink-0"
                     aria-hidden="true"
                   >
                     FO
                   </div>
                   <div class="text-left">
                     <cite
-                      class="font-serif not-italic text-sm sm:text-base block"
+                      class="font-serif not-italic text-sm sm:text-base
+                        block"
                       >Felipe Oliveira</cite
                     >
                     <span class="text-gold font-sans text-xs sm:text-sm"
@@ -806,21 +883,24 @@
               aria-label="Depoimentos"
             >
               <button
-                class="testimonial-dot w-2 h-2 rounded-full bg-gold/20 cursor-pointer border-0 p-0 transition-all duration-300"
+                class="testimonial-dot w-2 h-2 rounded-full bg-gold/20
+                  cursor-pointer border-0 p-0 transition-all duration-300"
                 data-slide="0"
                 role="tab"
                 aria-label="Depoimento 1"
                 aria-selected="true"
               ></button>
               <button
-                class="testimonial-dot w-2 h-2 rounded-full bg-gold/20 cursor-pointer border-0 p-0 transition-all duration-300"
+                class="testimonial-dot w-2 h-2 rounded-full bg-gold/20
+                  cursor-pointer border-0 p-0 transition-all duration-300"
                 data-slide="1"
                 role="tab"
                 aria-label="Depoimento 2"
                 aria-selected="false"
               ></button>
               <button
-                class="testimonial-dot w-2 h-2 rounded-full bg-gold/20 cursor-pointer border-0 p-0 transition-all duration-300"
+                class="testimonial-dot w-2 h-2 rounded-full bg-gold/20
+                  cursor-pointer border-0 p-0 transition-all duration-300"
                 data-slide="2"
                 role="tab"
                 aria-label="Depoimento 3"
@@ -831,7 +911,6 @@
         </div>
       </section>
 
-      <!-- ─── FALE CONOSCO CTA ────────────────────────────────── -->
       <section
         id="sac"
         aria-labelledby="sac-title"
@@ -840,7 +919,8 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <div class="reveal">
             <p
-              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm font-bold mb-3"
+              class="text-gold uppercase tracking-[0.15em] text-xs sm:text-sm
+                font-bold mb-3"
             >
               Capítulo VI
             </p>
@@ -851,24 +931,34 @@
               Fale Conosco
             </h2>
             <p
-              class="text-wgray max-w-md mx-auto mb-8 sm:mb-10 text-sm sm:text-base leading-relaxed"
+              class="text-wgray max-w-md mx-auto mb-8 sm:mb-10 text-sm
+                sm:text-base leading-relaxed"
             >
               Nossa equipe de especialistas está pronta para ajudá-lo a
               encontrar o vinho perfeito para cada momento.
             </p>
             <div
-              class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              class="flex flex-col sm:flex-row gap-4 justify-center
+                items-center"
             >
               <a
                 href="pages/sac.html"
-                class="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-dw font-bold font-sans uppercase tracking-widest text-xs rounded-full cursor-pointer no-underline transition-all duration-300 hover:bg-gold-l hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
+                class="inline-flex items-center gap-2 px-8 py-3.5 bg-gold
+                  text-dw font-bold font-sans uppercase tracking-widest
+                  text-xs rounded-full cursor-pointer no-underline
+                  transition-all duration-300 hover:bg-gold-l
+                  hover:-translate-y-0.5
+                  hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
               >
                 Acessar o SAC
                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
               </a>
               <a
                 href="mailto:contato@contosadega.com.br"
-                class="inline-flex items-center gap-2 px-8 py-3.5 border border-gold/40 text-gold rounded-full text-xs tracking-widest no-underline hover:border-gold hover:bg-gold/[0.06] transition-all duration-300"
+                class="inline-flex items-center gap-2 px-8 py-3.5 border
+                  border-gold/40 text-gold rounded-full text-xs
+                  tracking-widest no-underline hover:border-gold
+                  hover:bg-gold/[0.06] transition-all duration-300"
               >
                 <i class="bi bi-envelope" aria-hidden="true"></i> Enviar e-mail
               </a>
@@ -878,17 +968,15 @@
       </section>
     </main>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       RODAPÉ
-  ══════════════════════════════════════════════════════════════ -->
     <footer
-      class="bg-fw text-white pt-12 sm:pt-16 pb-8 border-t border-white/[0.05]"
+      class="bg-fw text-white pt-12 sm:pt-16 pb-8 border-t
+        border-white/[0.05]"
     >
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1.5fr] gap-8 sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
+          class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1.5fr] gap-8
+            sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
         >
-          <!-- Brand -->
           <div class="col-span-2 sm:col-span-1">
             <p class="font-serif text-2xl lg:text-3xl mb-3 leading-tight">
               CONTOS<br >DA ADEGA
@@ -896,10 +984,10 @@
             <p class="text-wgray text-sm">Narrativas envelhecidas desde 1998</p>
           </div>
 
-          <!-- Explorar -->
           <nav aria-label="Links do rodapé – Explorar">
             <h3
-              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
             >
               Explorar
             </h3>
@@ -907,38 +995,42 @@
               <li>
                 <a
                   href="pages/collection.html"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >A Coleção</a
                 >
               </li>
               <li>
                 <a
                   href="pages/club.html"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >Clube da Adega</a
                 >
               </li>
               <li>
                 <a
                   href="#testimonials"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >As Vozes</a
                 >
               </li>
               <li>
                 <a
                   href="#process"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >O Processo</a
                 >
               </li>
             </ul>
           </nav>
 
-          <!-- Suporte -->
           <nav aria-label="Links do rodapé – Suporte">
             <h3
-              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
             >
               Suporte
             </h3>
@@ -946,38 +1038,42 @@
               <li>
                 <a
                   href="pages/sac.html"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >Contato</a
                 >
               </li>
               <li>
                 <a
                   href="pages/sac.html"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >SAC</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >Localização</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-wgray text-sm no-underline hover:text-white transition-colors duration-300"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
                   >Privacidade</a
                 >
               </li>
             </ul>
           </nav>
 
-          <!-- Newsletter -->
           <div class="col-span-2 sm:col-span-1 lg:col-span-1">
             <h3
-              class="text-gold uppercase tracking-[0.2em] text-xs mb-3 sm:mb-4"
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
             >
               Crônicas da Adega
             </h3>
@@ -990,11 +1086,16 @@
                 name="newsletter-email"
                 placeholder="seu@email.com"
                 autocomplete="email"
-                class="min-w-0 flex-1 bg-white/[0.05] border border-white/10 rounded-l-full px-3 sm:px-4 py-2 text-white text-sm outline-none transition-colors duration-300 focus:border-gold placeholder:text-white/20"
+                class="min-w-0 flex-1 bg-white/[0.05] border border-white/10
+                  rounded-l-full px-3 sm:px-4 py-2 text-white text-sm
+                  outline-none transition-colors duration-300
+                  focus:border-gold placeholder:text-white/20"
               >
               <button
                 type="submit"
-                class="flex-shrink-0 bg-gold text-dw border-0 px-4 sm:px-6 py-2 rounded-r-full font-semibold text-sm cursor-pointer transition-colors duration-300 hover:bg-gold-l"
+                class="flex-shrink-0 bg-gold text-dw border-0 px-4 sm:px-6
+                  py-2 rounded-r-full font-semibold text-sm cursor-pointer
+                  transition-colors duration-300 hover:bg-gold-l"
                 aria-label="Inscrever"
               >
                 →
@@ -1004,7 +1105,8 @@
         </div>
 
         <div
-          class="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/[0.05] pt-5"
+          class="flex flex-col sm:flex-row items-center justify-between
+            gap-3 border-t border-white/[0.05] pt-5"
         >
           <small class="text-white/40 text-xs text-center sm:text-left">
             &copy; 2026 Contos da Adega. Todos os direitos reservados.
@@ -1013,7 +1115,8 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
                 aria-label="Twitter / X"
                 ><i class="bi bi-twitter-x" aria-hidden="true"></i
               ></a>
@@ -1021,7 +1124,8 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
                 aria-label="Instagram"
                 ><i class="bi bi-instagram" aria-hidden="true"></i
               ></a>
@@ -1029,7 +1133,8 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
                 aria-label="YouTube"
                 ><i class="bi bi-youtube" aria-hidden="true"></i
               ></a>
@@ -1037,7 +1142,8 @@
             <li>
               <a
                 href="#"
-                class="text-wgray hover:text-gold text-lg sm:text-xl transition-colors duration-300"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
                 aria-label="LinkedIn"
                 ><i class="bi bi-linkedin" aria-hidden="true"></i
               ></a>
@@ -1047,9 +1153,6 @@
       </div>
     </footer>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       MODAL DE AUTENTICAÇÃO
-  ══════════════════════════════════════════════════════════════ -->
     <div
       id="authModal"
       role="dialog"
@@ -1057,7 +1160,9 @@
       aria-labelledby="modalTitle"
     >
       <div
-        class="relative w-full max-w-md max-h-[90vh] overflow-y-auto bg-modal/[0.96] backdrop-blur-xl border border-gold-l/[0.15] rounded-2xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
+        class="relative w-full max-w-md max-h-[90vh] overflow-y-auto
+          bg-modal/[0.96] backdrop-blur-xl border border-gold-l/[0.15]
+          rounded-2xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
       >
         <div
           class="h-[3px] bg-gradient-to-r from-gold-d via-gold to-gold-d"
@@ -1066,7 +1171,9 @@
 
         <button
           id="closeModal"
-          class="absolute top-4 right-4 text-white/60 hover:text-white text-xl bg-transparent border-0 cursor-pointer z-10 transition-colors duration-300 p-1"
+          class="absolute top-4 right-4 text-white/60 hover:text-white
+            text-xl bg-transparent border-0 cursor-pointer z-10
+            transition-colors duration-300 p-1"
           aria-label="Fechar modal"
         >
           <i class="bi bi-x-lg" aria-hidden="true"></i>
@@ -1075,7 +1182,8 @@
         <div class="text-center pt-8 pb-3 px-4">
           <h2
             id="modalTitle"
-            class="font-serif text-gold tracking-[0.15em] text-base sm:text-lg"
+            class="font-serif text-gold tracking-[0.15em] text-base
+              sm:text-lg"
           >
             CONTOS DA ADEGA
           </h2>
@@ -1088,7 +1196,9 @@
           aria-label="Autenticação"
         >
           <button
-            class="auth-tab text-gold bg-transparent font-sans text-xs sm:text-sm uppercase tracking-widest cursor-pointer border-0 active"
+            class="auth-tab text-gold bg-transparent font-sans text-xs
+              sm:text-sm uppercase tracking-widest cursor-pointer border-0
+              active"
             data-target="#loginPane"
             role="tab"
             aria-controls="loginPane"
@@ -1097,7 +1207,8 @@
             Entrar
           </button>
           <button
-            class="auth-tab text-wgray bg-transparent font-sans text-xs sm:text-sm uppercase tracking-widest cursor-pointer border-0"
+            class="auth-tab text-wgray bg-transparent font-sans text-xs
+              sm:text-sm uppercase tracking-widest cursor-pointer border-0"
             data-target="#registerPane"
             role="tab"
             aria-controls="registerPane"
@@ -1110,7 +1221,6 @@
         <div class="px-5 sm:px-8 pb-6 sm:pb-8">
           <div id="authMessage" class="hidden" role="alert"></div>
 
-          <!-- Login -->
           <div id="loginPane" class="tab-pane active" role="tabpanel">
             <form id="loginForm">
               <div class="mb-4">
@@ -1138,7 +1248,8 @@
                   >
                   <a
                     href="#"
-                    class="text-gold text-xs sm:text-sm no-underline hover:underline"
+                    class="text-gold text-xs sm:text-sm no-underline
+                      hover:underline"
                     >Esqueceu?</a
                   >
                 </div>
@@ -1155,14 +1266,17 @@
               </div>
               <button
                 type="submit"
-                class="w-full py-3 bg-gold text-dw font-bold font-sans uppercase tracking-widest text-xs sm:text-sm rounded-full cursor-pointer border-0 transition-all duration-300 hover:bg-gold-l hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
+                class="w-full py-3 bg-gold text-dw font-bold font-sans
+                  uppercase tracking-widest text-xs sm:text-sm rounded-full
+                  cursor-pointer border-0 transition-all duration-300
+                  hover:bg-gold-l hover:-translate-y-0.5
+                  hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
               >
                 Entrar
               </button>
             </form>
           </div>
 
-          <!-- Cadastro -->
           <div id="registerPane" class="tab-pane" role="tabpanel">
             <form id="registerForm">
               <div class="mb-3">
@@ -1338,7 +1452,11 @@
               </div>
               <button
                 type="submit"
-                class="w-full py-3 bg-gold text-dw font-bold font-sans uppercase tracking-widest text-xs sm:text-sm rounded-full cursor-pointer border-0 transition-all duration-300 hover:bg-gold-l hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
+                class="w-full py-3 bg-gold text-dw font-bold font-sans
+                  uppercase tracking-widest text-xs sm:text-sm rounded-full
+                  cursor-pointer border-0 transition-all duration-300
+                  hover:bg-gold-l hover:-translate-y-0.5
+                  hover:shadow-[0_8px_25px_rgba(220,165,75,0.4)]"
               >
                 Criar Conta
               </button>
@@ -1348,19 +1466,20 @@
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════════
-       TOAST
-  ══════════════════════════════════════════════════════════════ -->
     <div id="toastNotif" role="status" aria-live="polite">
       <span id="toastBody" class="font-sans text-sm"></span>
       <button
         id="toastClose"
-        class="bg-transparent border-0 text-white/50 hover:text-white cursor-pointer text-lg leading-none flex-shrink-0 p-1"
+        class="bg-transparent border-0 text-white/50 hover:text-white
+          cursor-pointer text-lg leading-none flex-shrink-0 p-1"
         aria-label="Fechar notificação"
       >
         &times;
       </button>
+
     </div>
+
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
