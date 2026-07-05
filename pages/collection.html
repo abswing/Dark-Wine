@@ -21,19 +21,13 @@
     <link rel="stylesheet" href="../styles/style.css" >
   </head>
   <body class="bg-dw text-soft font-sans overflow-x-hidden">
-    <div id="scrollProgress" aria-hidden="true"></div>
-
-    <button
-      id="backToTop"
-      aria-label="Voltar ao topo"
-      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10
-        rounded-full bg-gold text-dw flex items-center justify-center
-        z-[999] cursor-pointer hover:bg-gold-l hover:-translate-y-1
-        transition-all duration-300"
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2
+        focus:z-[9999] focus:bg-gold focus:text-dw focus:px-4 focus:py-2
+        focus:rounded-full focus:no-underline"
+      >Pular para o conteúdo</a
     >
-      <i class="bi bi-arrow-up" aria-hidden="true"></i>
-    </button>
-
     <header class="relative">
       <nav id="mainNav" aria-label="Navegação principal">
         <div class="flex items-center justify-between px-4 sm:px-6 py-3">
@@ -134,23 +128,25 @@
                   xl:gap-6 py-3 lg:py-0 mt-2 lg:mt-0 mx-2 lg:mx-0 border-t
                   border-white/[0.05] lg:border-none"
               >
-                <a
-                  href="#"
+                <button
+                  type="button"
                   class="text-soft hover:text-gold transition-colors
-                    duration-300 text-xl lg:text-lg p-2 lg:p-0"
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 bg-transparent
+                    border-0 cursor-pointer"
                   aria-label="Buscar"
                 >
                   <i class="bi bi-search" aria-hidden="true"></i>
-                </a>
-                <a
-                  href="#"
+                </button>
+                <button
+                  type="button"
                   class="text-soft hover:text-gold transition-colors
-                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1"
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1
+                    bg-transparent border-0 cursor-pointer"
                   aria-label="Minha conta"
                   data-open-modal
                 >
                   <i class="bi bi-person" aria-hidden="true"></i>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -158,7 +154,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="pt-[6.5rem] md:pt-[7.5rem]">
           <div class="flex items-end justify-between pb-8 md:pb-10">
@@ -224,17 +220,6 @@
                 aria-pressed="false"
               >
                 Brancos
-              </button>
-              <button
-                data-filter="espumante"
-                class="filter-tab bg-transparent border-0 border-b
-                  border-transparent text-wgray font-sans text-[0.6875rem]
-                  tracking-[0.14em] uppercase cursor-pointer py-1 mr-8
-                  transition-colors duration-300 hover:text-soft
-                  whitespace-nowrap flex-shrink-0"
-                aria-pressed="false"
-              >
-                Espumantes
               </button>
               <button
                 data-filter="rose"
@@ -348,10 +333,16 @@
           </article>
 
           <article class="wine-card group cursor-default" data-type="tinto">
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-[#140606]
-                to-[#0a0101] mb-4"
-            ></div>
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/tinto4.jpg"
+                alt="Opus One"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
             <p
               class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
                 mb-1.5"
@@ -434,10 +425,16 @@
           </article>
 
           <article class="wine-card group cursor-default" data-type="branco">
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-[#110e06]
-                to-[#090701] mb-4"
-            ></div>
+             <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/branco3.jpg"
+                alt="Riesling Auslese"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
             <p
               class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
                 mb-1.5"
@@ -459,10 +456,16 @@
           </article>
 
           <article class="wine-card group cursor-default" data-type="branco">
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-[#110e06]
-                to-[#090701] mb-4"
-            ></div>
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/branco4.jpg"
+                alt="Riesling Auslese"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
             <p
               class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
                 mb-1.5"
@@ -483,141 +486,17 @@
             </p>
           </article>
 
-          <article
-            class="wine-card group cursor-default"
-            data-type="espumante"
-          >
-            <div class="aspect-[3/4] overflow-hidden mb-4">
-              <img
-                src="../assets/images/collection/espumante.jpg"
-                alt="Dom Pérignon"
-                class="w-full h-full object-cover opacity-70
-                  transition-[transform,opacity] duration-500
-                  group-hover:opacity-85 group-hover:scale-[1.04]"
-                loading="lazy"
-              >
-            </div>
-            <p
-              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
-                mb-1.5"
-            >
-              Espumante · 2013
-            </p>
-            <h2
-              class="font-serif text-white text-sm sm:text-[0.9375rem]
-                leading-snug mb-1"
-            >
-              Dom Pérignon
-            </h2>
-            <p class="text-wgray/35 text-[0.68rem] mb-2">
-              Champagne · Chardonnay
-            </p>
-            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
-              Vintage de plenitude. Brioche tostado, fruta madura e borbulhas
-              finas.
-            </p>
-          </article>
-
-          <article
-            class="wine-card group cursor-default"
-            data-type="espumante"
-          >
-            <div class="aspect-[3/4] overflow-hidden mb-4">
-              <img
-                src="../assets/images/collection/espumante2.jpg"
-                alt="Franciacorta Satèn"
-                class="w-full h-full object-cover opacity-70
-                  transition-[transform,opacity] duration-500
-                  group-hover:opacity-85 group-hover:scale-[1.04]"
-                loading="lazy"
-              >
-            </div>
-            <p
-              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
-                mb-1.5"
-            >
-              Espumante · 2019
-            </p>
-            <h2
-              class="font-serif text-white text-sm sm:text-[0.9375rem]
-                leading-snug mb-1"
-            >
-              Franciacorta Satèn
-            </h2>
-            <p class="text-wgray/35 text-[0.68rem] mb-2">
-              Lombardia · Chardonnay
-            </p>
-            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
-              Espumante premium italiano. Suavidade aveludada e levedura fresca.
-            </p>
-          </article>
-
-          <article
-            class="wine-card group cursor-default"
-            data-type="espumante"
-          >
-            <div class="aspect-[3/4] overflow-hidden mb-4">
-              <img
-                src="../assets/images/collection/espumante3.jpg"
-                alt="Veuve Clicquot Brut"
-                class="w-full h-full object-cover opacity-70
-                  transition-[transform,opacity] duration-500
-                  group-hover:opacity-85 group-hover:scale-[1.04]"
-                loading="lazy"
-              >
-            </div>
-            <p
-              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
-                mb-1.5"
-            >
-              Espumante · NV
-            </p>
-            <h2
-              class="font-serif text-white text-sm sm:text-[0.9375rem]
-                leading-snug mb-1"
-            >
-              Veuve Clicquot Brut
-            </h2>
-            <p class="text-wgray/35 text-[0.68rem] mb-2">Reims · Blend</p>
-            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
-              Champagne icônico. Maçã verde, baunilha e cremosidade persistente.
-            </p>
-          </article>
-
-          <article
-            class="wine-card group cursor-default"
-            data-type="espumante"
-          >
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-[#0c0c10]
-                to-[#060608] mb-4"
-            ></div>
-            <p
-              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
-                mb-1.5"
-            >
-              Espumante · 2015
-            </p>
-            <h2
-              class="font-serif text-white text-sm sm:text-[0.9375rem]
-                leading-snug mb-1"
-            >
-              Cristal Roederer
-            </h2>
-            <p class="text-wgray/35 text-[0.68rem] mb-2">
-              Champagne · Chardonnay
-            </p>
-            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
-              Cuvée de prestígio. Elegância luminosa, frutas amarelas e
-              mineralidade.
-            </p>
-          </article>
-
           <article class="wine-card group cursor-default" data-type="rose">
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-[#14070a]
-                to-[#0a0305] mb-4"
-            ></div>
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/rose.jpg"
+                alt="Riesling Auslese"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
             <p
               class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
                 mb-1.5"
@@ -637,10 +516,16 @@
           </article>
 
           <article class="wine-card group cursor-default" data-type="rose">
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-[#14070a]
-                to-[#0a0305] mb-4"
-            ></div>
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/rose2.jpg"
+                alt="Riesling Auslese"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
             <p
               class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
                 mb-1.5"
@@ -660,10 +545,16 @@
           </article>
 
           <article class="wine-card group cursor-default" data-type="rose">
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-[#14070a]
-                to-[#0a0305] mb-4"
-            ></div>
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/rose3.jpg"
+                alt="Riesling Auslese"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
             <p
               class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
                 mb-1.5"
@@ -686,10 +577,16 @@
           </article>
 
           <article class="wine-card group cursor-default" data-type="rose">
-            <div
-              class="aspect-[3/4] bg-gradient-to-br from-[#14070a]
-                to-[#0a0305] mb-4"
-            ></div>
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/rose4.jpg"
+                alt="Riesling Auslese"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
             <p
               class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
                 mb-1.5"
@@ -756,9 +653,13 @@
             sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
         >
           <div class="col-span-2 sm:col-span-1">
-            <p class="font-serif text-2xl lg:text-3xl mb-3 leading-tight">
+            <a
+              href="../index.html"
+              class="font-serif text-2xl lg:text-3xl mb-3 leading-tight
+                inline-block text-white no-underline"
+            >
               CONTOS<br >DA ADEGA
-            </p>
+            </a>
             <p class="text-wgray text-sm">Narrativas envelhecidas desde 1998</p>
           </div>
 
@@ -772,7 +673,7 @@
             <ul class="list-none m-0 p-0 space-y-2">
               <li>
                 <a
-                  href="pages/collection.html"
+                  href="collection.html"
                   class="text-wgray text-sm no-underline hover:text-white
                     transition-colors duration-300"
                   >A Coleção</a
@@ -780,7 +681,7 @@
               </li>
               <li>
                 <a
-                  href="pages/club.html"
+                  href="club.html"
                   class="text-wgray text-sm no-underline hover:text-white
                     transition-colors duration-300"
                   >Clube da Adega</a
@@ -815,7 +716,7 @@
             <ul class="list-none m-0 p-0 space-y-2">
               <li>
                 <a
-                  href="pages/sac.html"
+                  href="sac.html"
                   class="text-wgray text-sm no-underline hover:text-white
                     transition-colors duration-300"
                   >Contato</a
@@ -823,7 +724,7 @@
               </li>
               <li>
                 <a
-                  href="pages/sac.html"
+                  href="sac.html"
                   class="text-wgray text-sm no-underline hover:text-white
                     transition-colors duration-300"
                   >SAC</a
@@ -971,6 +872,7 @@
           aria-label="Autenticação"
         >
           <button
+            id="loginTab"
             class="auth-tab text-gold bg-transparent text-xs uppercase
               tracking-widest cursor-pointer border-0 active"
             data-target="#loginPane"
@@ -981,6 +883,7 @@
             Entrar
           </button>
           <button
+            id="registerTab"
             class="auth-tab text-wgray bg-transparent text-xs uppercase
               tracking-widest cursor-pointer border-0"
             data-target="#registerPane"
@@ -993,7 +896,12 @@
         </div>
         <div class="px-6 pb-8">
           <div id="authMessage" class="hidden" role="alert"></div>
-          <div id="loginPane" class="tab-pane active" role="tabpanel">
+          <div
+            id="loginPane"
+            class="tab-pane active"
+            role="tabpanel"
+            aria-labelledby="loginTab"
+          >
             <form id="loginForm" class="flex flex-col gap-4">
               <div>
                 <label
@@ -1043,7 +951,12 @@
               </button>
             </form>
           </div>
-          <div id="registerPane" class="tab-pane" role="tabpanel">
+          <div
+            id="registerPane"
+            class="tab-pane"
+            role="tabpanel"
+            aria-labelledby="registerTab"
+          >
             <form id="registerForm" class="flex flex-col gap-4">
               <div>
                 <label for="regName" class="text-wgray text-xs block mb-1 ml-1"

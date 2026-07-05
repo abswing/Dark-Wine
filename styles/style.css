@@ -6,30 +6,6 @@
   display: none;
 }
 
-/* ── Scroll Progress ─────────────────────────────── */
-#scrollProgress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 0.1875rem;
-  width: 0%;
-  background: linear-gradient(90deg, #8a6327, #c9923a, #8a6327);
-  z-index: 9999;
-  transition: width 0.1s linear;
-}
-
-/* ── Back to Top ─────────────────────────────────── */
-#backToTop {
-  opacity: 0;
-  transform: translateY(1.25rem);
-  pointer-events: none;
-}
-#backToTop.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
 /* ── Navbar ──────────────────────────────────────── */
 #mainNav {
   position: fixed;

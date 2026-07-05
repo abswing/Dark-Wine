@@ -36,28 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
   }
 
-  /* ── Scroll progress ────────────────────────────── */
-  const progressBar = document.getElementById('scrollProgress')
-  window.addEventListener(
-    'scroll',
-    () => {
-      const total = document.documentElement.scrollHeight - window.innerHeight
-      progressBar.style.width = (window.scrollY / total) * 100 + '%'
-    },
-    { passive: true },
-  )
-
-  /* ── Back to Top ────────────────────────────────── */
-  const backToTop = document.getElementById('backToTop')
-  window.addEventListener(
-    'scroll',
-    () => backToTop.classList.toggle('visible', window.scrollY > 400),
-    { passive: true },
-  )
-  backToTop.addEventListener('click', () =>
-    window.scrollTo({ top: 0, behavior: 'smooth' }),
-  )
-
   /* ── Navbar scrolled ────────────────────────────── */
   const navbar = document.getElementById('mainNav')
   function onNavScroll() {

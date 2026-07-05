@@ -21,19 +21,13 @@
     <link rel="stylesheet" href="../styles/style.css" >
   </head>
   <body class="bg-dw text-soft font-sans overflow-x-hidden">
-    <div id="scrollProgress" aria-hidden="true"></div>
-
-    <button
-      id="backToTop"
-      aria-label="Voltar ao topo"
-      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10
-        rounded-full bg-gold text-dw flex items-center justify-center
-        z-[999] cursor-pointer hover:bg-gold-l hover:-translate-y-1
-        transition-all duration-300"
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2
+        focus:z-[9999] focus:bg-gold focus:text-dw focus:px-4 focus:py-2
+        focus:rounded-full focus:no-underline"
+      >Pular para o conteúdo</a
     >
-      <i class="bi bi-arrow-up" aria-hidden="true"></i>
-    </button>
-
     <header class="relative">
       <nav id="mainNav" aria-label="Navegação principal">
         <div class="flex items-center justify-between px-4 sm:px-6 py-3">
@@ -134,23 +128,25 @@
                   xl:gap-6 py-3 lg:py-0 mt-2 lg:mt-0 mx-2 lg:mx-0 border-t
                   border-white/[0.05] lg:border-none"
               >
-                <a
-                  href="#"
+                <button
+                  type="button"
                   class="text-soft hover:text-gold transition-colors
-                    duration-300 text-xl lg:text-lg p-2 lg:p-0"
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 bg-transparent
+                    border-0 cursor-pointer"
                   aria-label="Buscar"
                 >
                   <i class="bi bi-search" aria-hidden="true"></i>
-                </a>
-                <a
-                  href="#"
+                </button>
+                <button
+                  type="button"
                   class="text-soft hover:text-gold transition-colors
-                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1"
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1
+                    bg-transparent border-0 cursor-pointer"
                   aria-label="Minha conta"
                   data-open-modal
                 >
                   <i class="bi bi-person" aria-hidden="true"></i>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -158,7 +154,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div
           class="pt-28 md:pt-36 pb-14 md:pb-20 grid grid-cols-1
@@ -413,168 +409,11 @@
           </div>
         </div>
 
-        <div class="border-t border-white/[0.06] pb-0">
-          <p
-            class="text-wgray text-xs uppercase tracking-widest py-8 pb-4
-              border-b border-white/[0.06]"
-          >
-            Dúvidas frequentes
-          </p>
-          <div class="max-w-[52rem]">
-            <div class="faq-item border-t border-white/[0.06] py-7">
-              <div
-                class="faq-q-row flex justify-between items-start gap-8
-                  cursor-pointer"
-              >
-                <span
-                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
-                    text-white"
-                  >Posso cancelar a qualquer momento?</span
-                >
-                <span
-                  class="faq-plus flex-shrink-0 text-white/25 text-lg
-                    leading-none mt-[0.1rem]"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a-wrap">
-                <div class="faq-a-inner">
-                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
-                    Sim, sem multa. Cancele até 5 dias antes do próximo ciclo
-                    pelo site ou via SAC.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item border-t border-white/[0.06] py-7">
-              <div
-                class="faq-q-row flex justify-between items-start gap-8
-                  cursor-pointer"
-              >
-                <span
-                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
-                    text-white"
-                  >O frete é realmente grátis?</span
-                >
-                <span
-                  class="faq-plus flex-shrink-0 text-white/25 text-lg
-                    leading-none mt-[0.1rem]"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a-wrap">
-                <div class="faq-a-inner">
-                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
-                    Sim, para todo o Brasil em todos os planos, em embalagem
-                    térmica especial.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item border-t border-white/[0.06] py-7">
-              <div
-                class="faq-q-row flex justify-between items-start gap-8
-                  cursor-pointer"
-              >
-                <span
-                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
-                    text-white"
-                  >Posso personalizar os vinhos?</span
-                >
-                <span
-                  class="faq-plus flex-shrink-0 text-white/25 text-lg
-                    leading-none mt-[0.1rem]"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a-wrap">
-                <div class="faq-a-inner">
-                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
-                    A curadoria é dos nossos sommeliers. No plano Connaisseur é
-                    possível indicar preferências avançadas de paladar.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item border-t border-b border-white/[0.06] py-7">
-              <div
-                class="faq-q-row flex justify-between items-start gap-8
-                  cursor-pointer"
-              >
-                <span
-                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
-                    text-white"
-                  >Quando são enviados os pedidos?</span
-                >
-                <span
-                  class="faq-plus flex-shrink-0 text-white/25 text-lg
-                    leading-none mt-[0.1rem]"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a-wrap">
-                <div class="faq-a-inner">
-                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
-                    Todo dia 5 do mês. De 3 a 5 dias úteis para capitais, até 7
-                    para o interior.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div
           class="border-t border-white/[0.06] py-16 sm:py-20 flex flex-col
             sm:flex-row items-start sm:items-end justify-between gap-8"
         >
-          <div class="flex gap-10 sm:gap-16 flex-wrap">
-            <div>
-              <p
-                class="font-serif text-[clamp(2rem,4vw,3rem)] text-white
-                  leading-none"
-              >
-                3.200<span class="text-gold">+</span>
-              </p>
-              <p
-                class="text-[0.6875rem] text-wgray tracking-[0.1em] uppercase
-                  mt-1"
-              >
-                Membros
-              </p>
-            </div>
-            <div>
-              <p
-                class="font-serif text-[clamp(2rem,4vw,3rem)] text-white
-                  leading-none"
-              >
-                480<span class="text-gold">+</span>
-              </p>
-              <p
-                class="text-[0.6875rem] text-wgray tracking-[0.1em] uppercase
-                  mt-1"
-              >
-                Rótulos curados
-              </p>
-            </div>
-            <div>
-              <p
-                class="font-serif text-[clamp(2rem,4vw,3rem)] text-white
-                  leading-none"
-              >
-                18<span class="text-gold">+</span>
-              </p>
-              <p
-                class="text-[0.6875rem] text-wgray tracking-[0.1em] uppercase
-                  mt-1"
-              >
-                Países
-              </p>
-            </div>
-          </div>
           <a
             href="sac.html"
             class="text-wgray text-xs uppercase tracking-widest no-underline
@@ -602,9 +441,13 @@
             sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
         >
           <div class="col-span-2 sm:col-span-1">
-            <p class="font-serif text-2xl lg:text-3xl mb-3 leading-tight">
+            <a
+              href="../index.html"
+              class="font-serif text-2xl lg:text-3xl mb-3 leading-tight
+                inline-block text-white no-underline"
+            >
               CONTOS<br >DA ADEGA
-            </p>
+            </a>
             <p class="text-wgray text-sm">Narrativas envelhecidas desde 1998</p>
           </div>
 
@@ -618,7 +461,7 @@
             <ul class="list-none m-0 p-0 space-y-2">
               <li>
                 <a
-                  href="pages/collection.html"
+                  href="collection.html"
                   class="text-wgray text-sm no-underline hover:text-white
                     transition-colors duration-300"
                   >A Coleção</a
@@ -626,7 +469,7 @@
               </li>
               <li>
                 <a
-                  href="pages/club.html"
+                  href="club.html"
                   class="text-wgray text-sm no-underline hover:text-white
                     transition-colors duration-300"
                   >Clube da Adega</a
@@ -661,7 +504,7 @@
             <ul class="list-none m-0 p-0 space-y-2">
               <li>
                 <a
-                  href="pages/sac.html"
+                  href="sac.html"
                   class="text-wgray text-sm no-underline hover:text-white
                     transition-colors duration-300"
                   >Contato</a
@@ -669,7 +512,7 @@
               </li>
               <li>
                 <a
-                  href="pages/sac.html"
+                  href="sac.html"
                   class="text-wgray text-sm no-underline hover:text-white
                     transition-colors duration-300"
                   >SAC</a
@@ -817,6 +660,7 @@
           aria-label="Autenticação"
         >
           <button
+            id="loginTab"
             class="auth-tab text-gold bg-transparent text-xs uppercase
               tracking-widest cursor-pointer border-0 active"
             data-target="#loginPane"
@@ -827,6 +671,7 @@
             Entrar
           </button>
           <button
+            id="registerTab"
             class="auth-tab text-wgray bg-transparent text-xs uppercase
               tracking-widest cursor-pointer border-0"
             data-target="#registerPane"
@@ -839,7 +684,12 @@
         </div>
         <div class="px-6 pb-8">
           <div id="authMessage" class="hidden" role="alert"></div>
-          <div id="loginPane" class="tab-pane active" role="tabpanel">
+          <div
+            id="loginPane"
+            class="tab-pane active"
+            role="tabpanel"
+            aria-labelledby="loginTab"
+          >
             <form id="loginForm" class="flex flex-col gap-4">
               <div>
                 <label
@@ -889,7 +739,12 @@
               </button>
             </form>
           </div>
-          <div id="registerPane" class="tab-pane" role="tabpanel">
+          <div
+            id="registerPane"
+            class="tab-pane"
+            role="tabpanel"
+            aria-labelledby="registerTab"
+          >
             <form id="registerForm" class="flex flex-col gap-4">
               <div>
                 <label for="regName" class="text-wgray text-xs block mb-1 ml-1"

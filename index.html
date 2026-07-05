@@ -28,18 +28,13 @@
     <link rel="stylesheet" href="styles/style.css" >
   </head>
   <body class="bg-dw text-[#e0e0e0] font-sans overflow-x-hidden">
-    <div id="scrollProgress" aria-hidden="true"></div>
-
-    <button
-      id="backToTop"
-      aria-label="Voltar ao topo"
-      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-11
-        sm:h-11 rounded-full bg-gold text-dw flex items-center justify-center
-        z-[999] cursor-pointer hover:bg-gold-l transition-all duration-300"
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2
+        focus:z-[9999] focus:bg-gold focus:text-dw focus:px-4 focus:py-2
+        focus:rounded-full focus:no-underline"
+      >Pular para o conteúdo</a
     >
-      <i class="bi bi-arrow-up text-sm sm:text-base" aria-hidden="true"></i>
-    </button>
-
     <header class="relative">
       <nav id="mainNav" aria-label="Navegação principal">
         <div class="flex items-center justify-between px-4 sm:px-6 py-3">
@@ -140,23 +135,25 @@
                   xl:gap-6 py-3 lg:py-0 mt-2 lg:mt-0 mx-2 lg:mx-0 border-t
                   border-white/[0.05] lg:border-none"
               >
-                <a
-                  href="#"
+                <button
+                  type="button"
                   class="text-soft hover:text-gold transition-colors
-                    duration-300 text-xl lg:text-lg p-2 lg:p-0"
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 bg-transparent
+                    border-0 cursor-pointer"
                   aria-label="Buscar"
                 >
                   <i class="bi bi-search" aria-hidden="true"></i>
-                </a>
-                <a
-                  href="#"
+                </button>
+                <button
+                  type="button"
                   class="text-soft hover:text-gold transition-colors
-                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1"
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1
+                    bg-transparent border-0 cursor-pointer"
                   aria-label="Minha conta"
                   data-open-modal
                 >
                   <i class="bi bi-person" aria-hidden="true"></i>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -164,7 +161,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <section
         id="inicio"
         aria-label="Capa"
@@ -336,110 +333,6 @@
               </div>
             </li>
 
-<<<<<<< HEAD
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-gradient"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">CONTOS</h1>
-            <h2 class="hero-subtitle">DA ADEGA</h2>
-            <p class="hero-tagline">NARRATIVAS ENVELHECIDAS</p>
-            <a href="#colecao" class="hero-btn">EXPLORAR COLEÇÃO</a>
-        </div>
-        <div class="scroll-indicator">
-            <span>SCROLL</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-    
-    <!-- History -->
-    <section class="history">
-           <span>Capítulo I</span>
-                    <h2 >A Origem</h2>
-                    <p >Na Contos da Adega, celebramos a arte milenar da vinicultura. Nossa paixão está em compartilhar experiências sensoriais únicas, onde cada garrafa é uma viagem através de terroirs distintos e tradições centenárias.</p>
-                    <p>Desde 1998, curamos histórias líquidas que transcendem o tempo, conectando mestres vinhateiros a apreciadores que buscam mais que um vinho: buscam uma narrativa.</p>
-                    <button><a href="#colecao">Ver a Coleção</a></button>
-                
-            <div 
-            img src="https://images.unsplash.com/photo-1561906814-23da9a8bfee0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Adega de vinhos">
-            </div>
-            
-    </section>
-
-    <!-- Collection -->
-    <section class="Collection">
-        <div>
-                    <div>
-                        <span>Capítulo II</span>
-                        <h2 >A Trilogia</h2>
-                    </div>
-            
-                    <div>
-                        <img src="./assets/images/collection.jpg" alt="Château Margaux">
-                    </div>
-                        <div>
-                            <h4>Château Margaux</h4>
-                            <p >Notas de cassis, violeta e especiarias. Taninos sedosos com final longo e muito complexo.</p>
-                            
-                        </div>
-        
-                    <div>
-                        <img src="./assets/images/collection2.jpg" alt="Barolo Riserva" >
-                    </div>
-                        <div>
-                            <h4 >Barolo Riserva</h4>
-                            <p>Rosas secas, alcatrão e cereja madura. Estrutura poderosa com taninos firmes e persistentes.</p>
-                           
-                        </div>
-                
-               
-
-                    <div class="wine-card-img-wrap">
-                        <img src="./assets/images/collection3.jpg" alt="Opus One">
-                    </div>
-                        <div>
-                            <h4 >Opus One</h4>
-                            <p >Mirtilo, chocolate amargo e baunilha. Elegância americana com a profundidade europeia.</p>
-                        </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <h3>CONTOS<br>DA ADEGA</h3>
-                <p style="color: var(--text-primary); font-size: 0.875rem; margin-top: 0.5rem;">Narrativas envelhecidas desde 1998</p>
-            </div>
-            <div>
-                <h4>EXPLORAR</h4>
-                <nav>
-                    <ul>
-                        <li><a href="#">A Coleção</a></li>
-                        <li><a href="#">Histórias</a></li>
-                        <li><a href="#">Os Guardiões</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <h4>SUPORTE</h4>
-                <nav>
-                    <ul>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Localização</a></li>
-                        <li><a href="#">SAC</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <h4>CRÔNICAS DA ADEGA</h4>
-                <p style="color: var(--text-primary); font-size: 0.875rem; margin-bottom: 0.75rem;">Receba narrativas exclusivas</p>
-                <div class="newsletter" style="display: flex;">
-                    <input type="email" placeholder="seu@email.com">
-                    <button>→</button>
-=======
             <li
               class="wine-card reveal delay-1 rounded-[0.875rem]
                 overflow-hidden bg-white/[0.02] border border-white/[0.06]
@@ -466,7 +359,6 @@
                     Rosas secas, alcatrão e cereja madura. Estrutura poderosa
                     com taninos firmes e persistentes.
                   </p>
->>>>>>> e9ccf98a562519d4b7f9fad5058bd5cef389bcdf
                 </div>
               </div>
             </li>
@@ -500,18 +392,6 @@
             </li>
           </ul>
         </div>
-<<<<<<< HEAD
-        <div class="footer-bottom">
-            <p>&copy; 2026 Contos da Adega. Todos os direitos reservados.</p>
-            <nav class="social-icons">
-                <ul>
-                    <li><a href="#"><i class="fab fa-twitter"></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin"></a></li>
-                </ul>
-            </nav>
-=======
       </section>
 
       <section
@@ -669,7 +549,6 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
->>>>>>> e9ccf98a562519d4b7f9fad5058bd5cef389bcdf
         </div>
       </section>
 
@@ -1096,9 +975,13 @@
             sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
         >
           <div class="col-span-2 sm:col-span-1">
-            <p class="font-serif text-2xl lg:text-3xl mb-3 leading-tight">
+            <a
+              href="#inicio"
+              class="font-serif text-2xl lg:text-3xl mb-3 leading-tight
+                inline-block text-white no-underline"
+            >
               CONTOS<br >DA ADEGA
-            </p>
+            </a>
             <p class="text-wgray text-sm">Narrativas envelhecidas desde 1998</p>
           </div>
 
@@ -1314,6 +1197,7 @@
           aria-label="Autenticação"
         >
           <button
+            id="loginTab"
             class="auth-tab text-gold bg-transparent font-sans text-xs
               sm:text-sm uppercase tracking-widest cursor-pointer border-0
               active"
@@ -1325,6 +1209,7 @@
             Entrar
           </button>
           <button
+            id="registerTab"
             class="auth-tab text-wgray bg-transparent font-sans text-xs
               sm:text-sm uppercase tracking-widest cursor-pointer border-0"
             data-target="#registerPane"
@@ -1339,7 +1224,12 @@
         <div class="px-5 sm:px-8 pb-6 sm:pb-8">
           <div id="authMessage" class="hidden" role="alert"></div>
 
-          <div id="loginPane" class="tab-pane active" role="tabpanel">
+          <div
+            id="loginPane"
+            class="tab-pane active"
+            role="tabpanel"
+            aria-labelledby="loginTab"
+          >
             <form id="loginForm">
               <div class="mb-4">
                 <label
@@ -1395,7 +1285,12 @@
             </form>
           </div>
 
-          <div id="registerPane" class="tab-pane" role="tabpanel">
+          <div
+            id="registerPane"
+            class="tab-pane"
+            role="tabpanel"
+            aria-labelledby="registerTab"
+          >
             <form id="registerForm">
               <div class="mb-3">
                 <label
