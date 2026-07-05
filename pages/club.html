@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Clube da Adega — Contos da Adega</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    >
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind.config.js"></script>
+    <link rel="stylesheet" href="../styles/style.css" >
+  </head>
+  <body class="bg-dw text-soft font-sans overflow-x-hidden">
+    <div id="scrollProgress" aria-hidden="true"></div>
+
+    <button
+      id="backToTop"
+      aria-label="Voltar ao topo"
+      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10
+        rounded-full bg-gold text-dw flex items-center justify-center
+        z-[999] cursor-pointer hover:bg-gold-l hover:-translate-y-1
+        transition-all duration-300"
+    >
+      <i class="bi bi-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <header class="relative">
+      <nav id="mainNav" aria-label="Navegação principal">
+        <div class="flex items-center justify-between px-4 sm:px-6 py-3">
+          <a
+            href="../index.html"
+            class="font-serif text-white text-sm sm:text-base md:text-xl
+              tracking-[0.2em] no-underline shrink-0"
+          >
+            CONTOS DA ADEGA
+          </a>
+
+          <button
+            id="menuToggle"
+            class="lg:hidden text-white text-2xl bg-transparent border-0
+              cursor-pointer p-1 -mr-1"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <i class="bi bi-list" aria-hidden="true"></i>
+          </button>
+
+          <div
+            id="mobileMenu"
+            class="hidden lg:block absolute lg:static top-full left-0 w-full
+              lg:w-auto z-50 px-2 lg:px-0"
+          >
+            <ul
+              class="flex flex-col lg:flex-row lg:items-center list-none m-0
+                p-0 mt-1 lg:mt-0 bg-menu/[0.97] lg:bg-transparent
+                backdrop-blur-lg lg:backdrop-blur-none border border-gold/10
+                lg:border-none rounded-2xl lg:rounded-none
+                shadow-[0_16px_40px_rgba(0,0,0,0.7)] lg:shadow-none pb-2
+                lg:pb-0 lg:gap-5 xl:gap-6"
+            >
+              <li>
+                <a
+                  href="../index.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  Início
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="collection.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  A Coleção
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="club.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  Clube
+                </a>
+              </li>
+
+              <li class="lg:border-r lg:border-divider lg:pr-5 xl:pr-6">
+                <a
+                  href="sac.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  SAC
+                </a>
+              </li>
+
+              <li
+                class="flex justify-center lg:items-center gap-8 lg:gap-5
+                  xl:gap-6 py-3 lg:py-0 mt-2 lg:mt-0 mx-2 lg:mx-0 border-t
+                  border-white/[0.05] lg:border-none"
+              >
+                <a
+                  href="#"
+                  class="text-soft hover:text-gold transition-colors
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0"
+                  aria-label="Buscar"
+                >
+                  <i class="bi bi-search" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-soft hover:text-gold transition-colors
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1"
+                  aria-label="Minha conta"
+                  data-open-modal
+                >
+                  <i class="bi bi-person" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div
+          class="pt-28 md:pt-36 pb-14 md:pb-20 grid grid-cols-1
+            md:grid-cols-2 gap-8 md:gap-16 items-end border-b
+            border-white/[0.06]"
+          id="clube"
+        >
+          <div>
+            <h1
+              class="font-serif text-[clamp(3.5rem,9vw,7.5rem)]
+                leading-[0.92] text-white tracking-[-0.02em]"
+            >
+              Clube<br >da<br ><em class="italic text-gold">Adega</em>
+            </h1>
+          </div>
+          <div class="pb-2">
+            <p class="text-wgray text-sm leading-relaxed max-w-xs mb-5">
+              Uma seleção nova toda mês. Rótulos escolhidos por sommeliers
+              apaixonados.
+            </p>
+            <p class="text-wgray/40 text-xs uppercase tracking-widest">
+              Frete grátis · Cancele quando quiser
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section class="bg-linen py-16 md:py-20" aria-labelledby="planos-lbl">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <p
+            class="text-[#9a8a7e] text-[0.6875rem] tracking-[0.16em]
+              uppercase pb-8 border-b border-black/[0.08] mb-8"
+            id="planos-lbl"
+          >
+            Planos de assinatura
+          </p>
+
+          <div
+            class="divide-y divide-black/[0.08] sm:divide-y-0 sm:grid
+              sm:grid-cols-3 sm:divide-x sm:divide-black/[0.08]"
+          >
+            <div class="bg-linen flex flex-col py-10 sm:pr-8 lg:pr-12">
+              <p class="text-[#9a8a7e] text-[0.6875rem] tracking-[0.1em] mb-6">
+                01
+              </p>
+              <h2
+                class="font-serif text-[clamp(1.375rem,2.5vw,1.75rem)] text-dw
+                  leading-none mb-8"
+              >
+                Iniciante
+              </h2>
+              <p
+                class="font-serif text-[clamp(3rem,5.5vw,4.25rem)]
+                  leading-none text-dw mb-1"
+              >
+                149
+              </p>
+              <p class="text-xs text-[#9a8a7e] mb-8">R$ por mês</p>
+              <hr class="border-0 border-t border-black/[0.1] mb-6" >
+              <ul class="list-none m-0 p-0 flex flex-col gap-3 flex-1">
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-[#6b5f55]
+                    flex items-center gap-3"
+                >
+                  2 garrafas por mês
+                </li>
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-[#6b5f55]
+                    flex items-center gap-3"
+                >
+                  Notas de degustação
+                </li>
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-[#6b5f55]
+                    flex items-center gap-3"
+                >
+                  Frete grátis
+                </li>
+              </ul>
+              <button
+                class="inline-flex items-center gap-2 mt-10 font-sans
+                  text-[0.6875rem] tracking-[0.14em] uppercase
+                  cursor-pointer bg-transparent border-0 p-0 text-dw
+                  transition-all duration-300 hover:gap-3.5 hover:opacity-65"
+                data-open-modal
+              >
+                Assinar <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="bg-dw flex flex-col py-10 sm:px-8 lg:px-12">
+              <p class="text-gold text-[0.6875rem] tracking-[0.1em] mb-6">02</p>
+              <div class="flex items-baseline gap-3 mb-8">
+                <h2
+                  class="font-serif text-[clamp(1.375rem,2.5vw,1.75rem)]
+                    text-white leading-none"
+                >
+                  Explorador
+                </h2>
+                <span
+                  class="text-[0.6rem] tracking-[0.12em] uppercase border
+                    border-gold/50 text-gold px-2 py-[0.2rem] rounded-full"
+                  >Popular</span
+                >
+              </div>
+              <p
+                class="font-serif text-[clamp(3rem,5.5vw,4.25rem)]
+                  leading-none text-white mb-1"
+              >
+                269
+              </p>
+              <p class="text-xs text-wgray mb-8">R$ por mês</p>
+              <hr class="border-0 border-t border-white/[0.1] mb-6" >
+              <ul class="list-none m-0 p-0 flex flex-col gap-3 flex-1">
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-wgray flex
+                    items-center gap-3"
+                >
+                  4 garrafas por mês
+                </li>
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-wgray flex
+                    items-center gap-3"
+                >
+                  Frete grátis
+                </li>
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-wgray flex
+                    items-center gap-3"
+                >
+                  10% desconto na loja
+                </li>
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-wgray flex
+                    items-center gap-3"
+                >
+                  Acesso antecipado
+                </li>
+              </ul>
+              <button
+                class="inline-flex items-center gap-2 mt-10 font-sans
+                  text-[0.6875rem] tracking-[0.14em] uppercase
+                  cursor-pointer bg-transparent border-0 p-0 text-gold
+                  transition-all duration-300 hover:gap-3.5 hover:opacity-80"
+                data-open-modal
+              >
+                Assinar <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="bg-linen flex flex-col py-10 sm:pl-8 lg:pl-12">
+              <p class="text-[#9a8a7e] text-[0.6875rem] tracking-[0.1em] mb-6">
+                03
+              </p>
+              <h2
+                class="font-serif text-[clamp(1.375rem,2.5vw,1.75rem)] text-dw
+                  leading-none mb-8"
+              >
+                Connaisseur
+              </h2>
+              <p
+                class="font-serif text-[clamp(3rem,5.5vw,4.25rem)]
+                  leading-none text-dw mb-1"
+              >
+                499
+              </p>
+              <p class="text-xs text-[#9a8a7e] mb-8">R$ por mês</p>
+              <hr class="border-0 border-t border-black/[0.1] mb-6" >
+              <ul class="list-none m-0 p-0 flex flex-col gap-3 flex-1">
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-[#6b5f55]
+                    flex items-center gap-3"
+                >
+                  4 garrafas premium
+                </li>
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-[#6b5f55]
+                    flex items-center gap-3"
+                >
+                  Rótulos exclusivos
+                </li>
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-[#6b5f55]
+                    flex items-center gap-3"
+                >
+                  Sommelier dedicado
+                </li>
+                <li
+                  class="plan-card-feature text-[0.8125rem] text-[#6b5f55]
+                    flex items-center gap-3"
+                >
+                  Eventos VIP
+                </li>
+              </ul>
+              <button
+                class="inline-flex items-center gap-2 mt-10 font-sans
+                  text-[0.6875rem] tracking-[0.14em] uppercase
+                  cursor-pointer bg-transparent border-0 p-0 text-dw
+                  transition-all duration-300 hover:gap-3.5 hover:opacity-65"
+                data-open-modal
+              >
+                Assinar <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="pt-16 sm:pt-20 pb-16 sm:pb-20">
+          <p
+            class="text-wgray text-xs uppercase tracking-widest pb-4 border-b
+              border-white/[0.06] mb-12"
+          >
+            Como funciona
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-16">
+            <div>
+              <p class="text-[0.6875rem] tracking-[0.1em] text-gold/40 mb-5">
+                01
+              </p>
+              <h3 class="font-serif text-white text-lg mb-3">
+                Escolha um plano
+              </h3>
+              <p class="text-wgray text-sm leading-relaxed">
+                Selecione a assinatura que melhor se encaixa no seu ritmo. Mude
+                quando quiser.
+              </p>
+            </div>
+            <div>
+              <p class="text-[0.6875rem] tracking-[0.1em] text-gold/40 mb-5">
+                02
+              </p>
+              <h3 class="font-serif text-white text-lg mb-3">
+                Curadoria mensal
+              </h3>
+              <p class="text-wgray text-sm leading-relaxed">
+                Nossos sommeliers escolhem rótulos com base no seu perfil, com
+                notas escritas à mão.
+              </p>
+            </div>
+            <div>
+              <p class="text-[0.6875rem] tracking-[0.1em] text-gold/40 mb-5">
+                03
+              </p>
+              <h3 class="font-serif text-white text-lg mb-3">Receba em casa</h3>
+              <p class="text-wgray text-sm leading-relaxed">
+                Todo dia 5, em embalagem térmica, com frete grátis para todo o
+                Brasil.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-white/[0.06] pb-0">
+          <p
+            class="text-wgray text-xs uppercase tracking-widest py-8 pb-4
+              border-b border-white/[0.06]"
+          >
+            Dúvidas frequentes
+          </p>
+          <div class="max-w-[52rem]">
+            <div class="faq-item border-t border-white/[0.06] py-7">
+              <div
+                class="faq-q-row flex justify-between items-start gap-8
+                  cursor-pointer"
+              >
+                <span
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
+                    text-white"
+                  >Posso cancelar a qualquer momento?</span
+                >
+                <span
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg
+                    leading-none mt-[0.1rem]"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a-wrap">
+                <div class="faq-a-inner">
+                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
+                    Sim, sem multa. Cancele até 5 dias antes do próximo ciclo
+                    pelo site ou via SAC.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-white/[0.06] py-7">
+              <div
+                class="faq-q-row flex justify-between items-start gap-8
+                  cursor-pointer"
+              >
+                <span
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
+                    text-white"
+                  >O frete é realmente grátis?</span
+                >
+                <span
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg
+                    leading-none mt-[0.1rem]"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a-wrap">
+                <div class="faq-a-inner">
+                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
+                    Sim, para todo o Brasil em todos os planos, em embalagem
+                    térmica especial.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-white/[0.06] py-7">
+              <div
+                class="faq-q-row flex justify-between items-start gap-8
+                  cursor-pointer"
+              >
+                <span
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
+                    text-white"
+                  >Posso personalizar os vinhos?</span
+                >
+                <span
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg
+                    leading-none mt-[0.1rem]"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a-wrap">
+                <div class="faq-a-inner">
+                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
+                    A curadoria é dos nossos sommeliers. No plano Connaisseur é
+                    possível indicar preferências avançadas de paladar.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-b border-white/[0.06] py-7">
+              <div
+                class="faq-q-row flex justify-between items-start gap-8
+                  cursor-pointer"
+              >
+                <span
+                  class="faq-q-text font-serif text-[clamp(1rem,2vw,1.125rem)]
+                    text-white"
+                  >Quando são enviados os pedidos?</span
+                >
+                <span
+                  class="faq-plus flex-shrink-0 text-white/25 text-lg
+                    leading-none mt-[0.1rem]"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a-wrap">
+                <div class="faq-a-inner">
+                  <p class="pt-4 text-sm text-wgray leading-[1.7]">
+                    Todo dia 5 do mês. De 3 a 5 dias úteis para capitais, até 7
+                    para o interior.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/[0.06] py-16 sm:py-20 flex flex-col
+            sm:flex-row items-start sm:items-end justify-between gap-8"
+        >
+          <div class="flex gap-10 sm:gap-16 flex-wrap">
+            <div>
+              <p
+                class="font-serif text-[clamp(2rem,4vw,3rem)] text-white
+                  leading-none"
+              >
+                3.200<span class="text-gold">+</span>
+              </p>
+              <p
+                class="text-[0.6875rem] text-wgray tracking-[0.1em] uppercase
+                  mt-1"
+              >
+                Membros
+              </p>
+            </div>
+            <div>
+              <p
+                class="font-serif text-[clamp(2rem,4vw,3rem)] text-white
+                  leading-none"
+              >
+                480<span class="text-gold">+</span>
+              </p>
+              <p
+                class="text-[0.6875rem] text-wgray tracking-[0.1em] uppercase
+                  mt-1"
+              >
+                Rótulos curados
+              </p>
+            </div>
+            <div>
+              <p
+                class="font-serif text-[clamp(2rem,4vw,3rem)] text-white
+                  leading-none"
+              >
+                18<span class="text-gold">+</span>
+              </p>
+              <p
+                class="text-[0.6875rem] text-wgray tracking-[0.1em] uppercase
+                  mt-1"
+              >
+                Países
+              </p>
+            </div>
+          </div>
+          <a
+            href="sac.html"
+            class="text-wgray text-xs uppercase tracking-widest no-underline
+              hover:text-gold transition-colors duration-300 inline-flex
+              items-center gap-2 group shrink-0"
+          >
+            SAC
+            <i
+              class="bi bi-arrow-right group-hover:translate-x-1
+                transition-transform duration-300"
+              aria-hidden="true"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="bg-fw text-white pt-12 sm:pt-16 pb-8 border-t
+        border-white/[0.05]"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div
+          class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1.5fr] gap-8
+            sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
+        >
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-serif text-2xl lg:text-3xl mb-3 leading-tight">
+              CONTOS<br >DA ADEGA
+            </p>
+            <p class="text-wgray text-sm">Narrativas envelhecidas desde 1998</p>
+          </div>
+
+          <nav aria-label="Links do rodapé – Explorar">
+            <h3
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
+            >
+              Explorar
+            </h3>
+            <ul class="list-none m-0 p-0 space-y-2">
+              <li>
+                <a
+                  href="pages/collection.html"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >A Coleção</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pages/club.html"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >Clube da Adega</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >As Vozes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#process"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >O Processo</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Links do rodapé – Suporte">
+            <h3
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
+            >
+              Suporte
+            </h3>
+            <ul class="list-none m-0 p-0 space-y-2">
+              <li>
+                <a
+                  href="pages/sac.html"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >Contato</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pages/sac.html"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >SAC</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >Localização</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >Privacidade</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="col-span-2 sm:col-span-1 lg:col-span-1">
+            <h3
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
+            >
+              Crônicas da Adega
+            </h3>
+            <p class="text-wgray text-sm mb-4">Receba narrativas exclusivas</p>
+            <form class="flex w-full" aria-label="Newsletter">
+              <label for="newsletterEmail" class="sr-only">Seu e-mail</label>
+              <input
+                type="email"
+                id="newsletterEmail"
+                name="newsletter-email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+                class="min-w-0 flex-1 bg-white/[0.05] border border-white/10
+                  rounded-l-full px-3 sm:px-4 py-2 text-white text-sm
+                  outline-none transition-colors duration-300
+                  focus:border-gold placeholder:text-white/20"
+              >
+              <button
+                type="submit"
+                class="flex-shrink-0 bg-gold text-dw border-0 px-4 sm:px-6
+                  py-2 rounded-r-full font-semibold text-sm cursor-pointer
+                  transition-colors duration-300 hover:bg-gold-l"
+                aria-label="Inscrever"
+              >
+                →
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between
+            gap-3 border-t border-white/[0.05] pt-5"
+        >
+          <small class="text-white/40 text-xs text-center sm:text-left">
+            &copy; 2026 Contos da Adega. Todos os direitos reservados.
+          </small>
+          <ul class="flex gap-4 list-none m-0 p-0">
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
+                aria-label="Twitter / X"
+                ><i class="bi bi-twitter-x" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
+                aria-label="Instagram"
+                ><i class="bi bi-instagram" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
+                aria-label="YouTube"
+                ><i class="bi bi-youtube" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
+                aria-label="LinkedIn"
+                ><i class="bi bi-linkedin" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="authModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div
+        class="relative w-full max-w-md max-h-[90vh] overflow-y-auto
+          bg-modal/[0.96] backdrop-blur-xl border border-gold-l/[0.15]
+          rounded-2xl overflow-hidden
+          shadow-[0_1.875rem_3.75rem_rgba(0,0,0,0.8)]"
+      >
+        <div
+          class="h-[3px] bg-gradient-to-r from-gold-d via-gold to-gold-d"
+          aria-hidden="true"
+        ></div>
+        <button
+          id="closeModal"
+          class="absolute top-4 right-4 text-white/60 hover:text-white
+            text-xl bg-transparent border-0 cursor-pointer z-10
+            transition-colors duration-300 p-1"
+          aria-label="Fechar"
+        >
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+        <div class="text-center pt-8 pb-3 px-4">
+          <h2
+            id="modalTitle"
+            class="font-serif text-gold tracking-[0.15em] text-base"
+          >
+            CONTOS DA ADEGA
+          </h2>
+          <p class="text-wgray text-sm mt-1">Acesse sua coleção</p>
+        </div>
+        <div
+          class="flex justify-center gap-8 px-4 mb-4"
+          role="tablist"
+          aria-label="Autenticação"
+        >
+          <button
+            class="auth-tab text-gold bg-transparent text-xs uppercase
+              tracking-widest cursor-pointer border-0 active"
+            data-target="#loginPane"
+            role="tab"
+            aria-controls="loginPane"
+            aria-selected="true"
+          >
+            Entrar
+          </button>
+          <button
+            class="auth-tab text-wgray bg-transparent text-xs uppercase
+              tracking-widest cursor-pointer border-0"
+            data-target="#registerPane"
+            role="tab"
+            aria-controls="registerPane"
+            aria-selected="false"
+          >
+            Registrar
+          </button>
+        </div>
+        <div class="px-6 pb-8">
+          <div id="authMessage" class="hidden" role="alert"></div>
+          <div id="loginPane" class="tab-pane active" role="tabpanel">
+            <form id="loginForm" class="flex flex-col gap-4">
+              <div>
+                <label
+                  for="loginEmail"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="loginEmail"
+                  name="email"
+                  class="custom-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <label for="loginPassword" class="text-wgray text-xs ml-1"
+                    >Senha</label
+                  >
+                  <a
+                    href="#"
+                    class="text-gold text-xs no-underline hover:underline"
+                    >Esqueceu?</a
+                  >
+                </div>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="password"
+                  class="custom-input"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                  required
+                  minlength="6"
+                >
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 bg-gold text-dw font-bold uppercase
+                  tracking-widest text-xs rounded-full cursor-pointer
+                  border-0 hover:bg-gold-l transition-colors duration-300"
+              >
+                Entrar
+              </button>
+            </form>
+          </div>
+          <div id="registerPane" class="tab-pane" role="tabpanel">
+            <form id="registerForm" class="flex flex-col gap-4">
+              <div>
+                <label for="regName" class="text-wgray text-xs block mb-1 ml-1"
+                  >Nome Completo</label
+                >
+                <input
+                  type="text"
+                  id="regName"
+                  name="name"
+                  class="custom-input"
+                  placeholder="Seu nome completo"
+                  autocomplete="name"
+                  required
+                  minlength="3"
+                >
+              </div>
+              <div>
+                <label for="regEmail" class="text-wgray text-xs block mb-1 ml-1"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="regEmail"
+                  name="email"
+                  class="custom-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+              <div>
+                <label for="regPhone" class="text-wgray text-xs block mb-1 ml-1"
+                  >Telefone/WhatsApp</label
+                >
+                <input
+                  type="tel"
+                  id="regPhone"
+                  name="phone"
+                  class="custom-input"
+                  placeholder="+55 (11) 9 9999-0000"
+                  autocomplete="tel"
+                  required
+                >
+              </div>
+              <div>
+                <label for="regCpf" class="text-wgray text-xs block mb-1 ml-1"
+                  >CPF</label
+                >
+                <input
+                  type="text"
+                  id="regCpf"
+                  name="cpf"
+                  class="custom-input"
+                  placeholder="000.000.000-00"
+                  required
+                  pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                  title="Formato: 000.000.000-00"
+                >
+              </div>
+              <div>
+                <label for="regDob" class="text-wgray text-xs block mb-1 ml-1"
+                  >Data de Nascimento</label
+                >
+                <input
+                  type="date"
+                  id="regDob"
+                  name="dob"
+                  class="custom-input"
+                  required
+                >
+              </div>
+              <div>
+                <label
+                  for="regEstado"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Estado</label
+                >
+                <select
+                  id="regEstado"
+                  name="estado"
+                  class="custom-input"
+                  required
+                >
+                  <option value="" disabled selected>Selecione o estado</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AM">AM</option>
+                  <option value="AP">AP</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MG">MG</option>
+                  <option value="MS">MS</option>
+                  <option value="MT">MT</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="PR">PR</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="RS">RS</option>
+                  <option value="SC">SC</option>
+                  <option value="SE">SE</option>
+                  <option value="SP">SP</option>
+                  <option value="TO">TO</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="regPassword"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Senha</label
+                >
+                <input
+                  type="password"
+                  id="regPassword"
+                  name="password"
+                  class="custom-input"
+                  placeholder="Crie uma senha"
+                  autocomplete="new-password"
+                  required
+                  minlength="6"
+                >
+                <div class="password-strength mt-2">
+                  <div class="password-strength-bar" id="strengthBar"></div>
+                </div>
+                <small
+                  id="strengthText"
+                  class="text-xs ml-1"
+                  aria-live="polite"
+                ></small>
+              </div>
+              <div>
+                <label
+                  for="regConfirmPassword"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Confirmar Senha</label
+                >
+                <input
+                  type="password"
+                  id="regConfirmPassword"
+                  name="confirmPassword"
+                  class="custom-input"
+                  placeholder="Repita a senha"
+                  autocomplete="new-password"
+                  required
+                  minlength="6"
+                >
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 bg-gold text-dw font-bold uppercase
+                  tracking-widest text-xs rounded-full cursor-pointer
+                  border-0 hover:bg-gold-l transition-colors duration-300"
+              >
+                Criar Conta
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastNotif" role="status" aria-live="polite">
+      <span id="toastBody" class="text-sm"></span>
+      <button
+        id="toastClose"
+        class="bg-transparent border-0 text-white/50 hover:text-white
+          cursor-pointer text-lg flex-shrink-0 p-1"
+        aria-label="Fechar"
+      >
+        &times;
+      </button>
+    </div>
+
+    <script src="../js/script.js" defer></script>
+    <script>
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        item.querySelector('.faq-q-row').addEventListener('click', () => {
+          const isOpen = item.classList.contains('open')
+          document
+            .querySelectorAll('.faq-item.open')
+            .forEach((o) => o.classList.remove('open'))
+          if (!isOpen) item.classList.add('open')
+        })
+      })
+    </script>
+  </body>
+</html>

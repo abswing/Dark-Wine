@@ -1,0 +1,500 @@
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Scroll Progress ─────────────────────────────── */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0.1875rem;
+  width: 0%;
+  background: linear-gradient(90deg, #8a6327, #c9923a, #8a6327);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ── Back to Top ─────────────────────────────────── */
+#backToTop {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  pointer-events: none;
+}
+#backToTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ── Navbar ──────────────────────────────────────── */
+#mainNav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+#mainNav.scrolled {
+  top: 0.875rem;
+  width: 94%;
+  max-width: 82.5rem;
+  margin: 0 auto;
+  background: rgba(9, 8, 7, 0.85);
+  backdrop-filter: blur(0.75rem);
+  -webkit-backdrop-filter: blur(0.75rem);
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.5); /* x, y, blur*/
+  border-radius: 3.125rem;
+  padding: 0.375rem 3.75rem;
+}
+@media (max-width: 61.9375rem) {
+  #mainNav.scrolled {
+    width: 96%;
+    padding: 0.375rem 1.125rem;
+    border-radius: 2.5rem;
+  }
+}
+
+/* ── Nav link underline ──────────────────────────── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -0.125rem;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #c9923a;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active-link::after {
+  width: 100%;
+}
+.nav-link.active-link {
+  color: #c9923a;
+}
+
+/* ── Mobile menu ──────────────────────────────────
+   Below lg (matches Tailwind's 64rem breakpoint minus 1px), JS toggles
+   `.open` to reveal the menu. At lg and up, Tailwind's `lg:block` utility
+   takes over — this rule must stay scoped to the media query or its ID
+   specificity would beat `.lg\:block` and hide the menu on desktop too. */
+@media (max-width: 63.9375rem) {
+  #mobileMenu {
+    display: none;
+  }
+  #mobileMenu.open {
+    display: block;
+  }
+}
+#mobileMenu .mobile-active {
+  color: #c9923a;
+  background: rgba(201, 146, 58, 0.06);
+}
+
+/* ── Hero animations ─────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleY(1);
+  }
+}
+.hero-title {
+  opacity: 0;
+  animation: fadeUp 1s ease-out 0.2s forwards;
+}
+.hero-tagline {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.6s forwards;
+}
+.hero-btn {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.8s forwards;
+}
+.scroll-indicator {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1.2s forwards;
+}
+.scroll-line {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ── Reveal on scroll ────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(2.25rem);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+@media (max-width: 39.9375rem) {
+  .reveal {
+    transform: translateY(1.375rem);
+  }
+}
+.reveal.block {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-1 {
+  transition-delay: 0.15s;
+}
+.delay-2 {
+  transition-delay: 0.3s;
+}
+.delay-3 {
+  transition-delay: 0.45s;
+}
+
+/* ── Wine card (index) ───────────────────────────── */
+.wine-card-img-wrap {
+  height: 25rem;
+}
+@media (max-width: 63.9375rem) {
+  .wine-card-img-wrap {
+    height: 18.75rem;
+  }
+}
+@media (max-width: 39.9375rem) {
+  .wine-card-img-wrap {
+    height: 16.25rem;
+  }
+}
+
+.wine-card-img-wrap-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #6e260e;
+  opacity: 0.5;
+}
+.wine-card-desc {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.35s ease;
+}
+.wine-card:hover .wine-card-desc {
+  max-height: 7.5rem;
+  opacity: 1;
+}
+.wine-card:hover .wine-card-img {
+  transform: scale(1.04);
+}
+
+@media (hover: none) {
+  .wine-card-desc {
+    max-height: 7.5rem;
+    opacity: 1;
+  }
+}
+
+/* ── Wine grid — centre orphan at sm ─────────────── */
+
+
+/* ── Gallery (index) ─────────────────────────────── */
+.carousel-item-css {
+  height: 28.125rem;
+  filter: grayscale(100%);
+  transition: filter 0.8s;
+}
+.carousel-item-css:hover {
+  filter: grayscale(0%);
+}
+@media (hover: none) {
+  .carousel-item-css {
+    filter: grayscale(0%);
+  }
+}
+.swiper-slide:hover .carousel-item-css img {
+  transform: scale(1.05);
+}
+
+.gallery-swiper {
+  padding-bottom: 3.5rem !important;
+  width: 90%;
+}
+.gallery-swiper .swiper-button-prev,
+.gallery-swiper .swiper-button-next {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(220, 165, 75, 0.35);
+  background: rgba(14, 11, 14, 0.8);
+  backdrop-filter: blur(0.5rem);
+  color: #c9923a;
+  transition: all 0.3s ease;
+  top: calc(14.0625rem - 1.25rem);
+}
+.gallery-swiper .swiper-button-prev {
+  left: 0.25rem;
+}
+.gallery-swiper .swiper-button-next {
+  right: 0.25rem;
+}
+.gallery-swiper .swiper-button-prev:hover,
+.gallery-swiper .swiper-button-next:hover {
+  background: #c9923a;
+  color: #0d0b09;
+  border-color: #c9923a;
+}
+.gallery-swiper .swiper-button-prev::after,
+.gallery-swiper .swiper-button-next::after {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.gallery-swiper .swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: rgba(220, 165, 75, 0.25);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.gallery-swiper .swiper-pagination-bullet-active {
+  background: #c9923a;
+  width: 1.5rem;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 35.9375rem) {
+  .carousel-item-css {
+    height: 15rem;
+  }
+  .gallery-swiper .swiper-button-prev,
+  .gallery-swiper .swiper-button-next {
+    width: 2.125rem;
+    height: 2.125rem;
+    top: calc(7.5rem - 1.0625rem);
+  }
+}
+@media (min-width: 36rem) and (max-width: 61.9375rem) {
+  .carousel-item-css {
+    height: 18.75rem;
+  }
+  .gallery-swiper .swiper-button-prev,
+  .gallery-swiper .swiper-button-next {
+    top: calc(9.375rem - 1.25rem);
+  }
+}
+
+/* ── Testimonials ────────────────────────────────── */
+.testimonial-slide {
+  display: none;
+}
+.testimonial-slide.active {
+  display: block;
+  animation: fadeUp 0.55s ease forwards;
+}
+.testimonial-dot.active {
+  background: #c9923a !important;
+  width: 1.375rem;
+  border-radius: 0.25rem;
+}
+
+/* ── FAQ accordion ───────────────────────────────── */
+.faq-item.open {
+  border-color: rgba(201, 146, 58, 0.35);
+}
+.faq-plus {
+  transition:
+    transform 0.3s,
+    color 0.3s;
+}
+.faq-item.open .faq-plus {
+  transform: rotate(45deg);
+  color: #c9923a;
+}
+
+/* ── FAQ answer expand ───────────────────────────── */
+.faq-a-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+  overflow: hidden;
+}
+.faq-item.open .faq-a-wrap {
+  grid-template-rows: 1fr;
+}
+.faq-a-inner {
+  overflow: hidden;
+}
+
+/* ── Filter tab active (colecao.html) ────────────── */
+.filter-tab.active {
+  color: #c9923a;
+  border-bottom-color: #c9923a;
+}
+
+/* ── Plan card feature bullet (clube.html) ───────── */
+.plan-card-feature::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background: #c9923a;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Custom form inputs ──────────────────────────── */
+.custom-input {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.1rem;
+  width: 100%;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.custom-input:focus {
+  border-color: #c9923a !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 0 0 0.1875rem rgba(220, 165, 75, 0.12) !important;
+}
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+.custom-input option {
+  background: #1a1018;
+  color: #fff;
+}
+
+/* ── Password strength ───────────────────────────── */
+.password-strength {
+  height: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0.125rem;
+  overflow: hidden;
+}
+.password-strength-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 0.125rem;
+  transition:
+    width 0.4s ease,
+    background-color 0.4s ease;
+}
+
+/* ── Validation ──────────────────────────────────── */
+.input-error {
+  border-color: rgba(242, 139, 130, 0.65) !important;
+  box-shadow: 0 0 0 0.1875rem rgba(242, 139, 130, 0.1) !important;
+}
+.field-error {
+  display: block;
+  color: #f28b82;
+  font-size: 0.75rem;
+  margin-top: 0.3125rem;
+  padding-left: 0.25rem;
+}
+
+/* ── Auth Modal ──────────────────────────────────── */
+#authModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9998;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(0.25rem);
+  padding: 1rem;
+}
+#authModal.open {
+  display: flex;
+}
+
+/* ── Auth tabs ───────────────────────────────────── */
+.auth-tab {
+  opacity: 0.55;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+.auth-tab.active {
+  color: #c9923a;
+  border-bottom-color: #c9923a;
+  opacity: 1;
+}
+.auth-tab:not(.active):hover {
+  color: #fff;
+  opacity: 1;
+}
+.tab-pane {
+  display: none;
+}
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ── Toast ───────────────────────────────────────── */
+#toastNotif {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(30, 20, 30, 0.95);
+  backdrop-filter: blur(0.75rem);
+  border: 1px solid rgba(220, 165, 75, 0.2);
+  border-radius: 0.75rem;
+  color: #fff;
+  z-index: 9999;
+  padding: 0.875rem 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+@media (min-width: 40rem) {
+  #toastNotif {
+    left: auto;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    min-width: 17.5rem;
+    max-width: 23.75rem;
+  }
+}
+#toastNotif.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}

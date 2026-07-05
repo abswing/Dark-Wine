@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>A Coleção — Contos da Adega</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    >
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind.config.js"></script>
+    <link rel="stylesheet" href="../styles/style.css" >
+  </head>
+  <body class="bg-dw text-soft font-sans overflow-x-hidden">
+    <div id="scrollProgress" aria-hidden="true"></div>
+
+    <button
+      id="backToTop"
+      aria-label="Voltar ao topo"
+      class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 w-10 h-10
+        rounded-full bg-gold text-dw flex items-center justify-center
+        z-[999] cursor-pointer hover:bg-gold-l hover:-translate-y-1
+        transition-all duration-300"
+    >
+      <i class="bi bi-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <header class="relative">
+      <nav id="mainNav" aria-label="Navegação principal">
+        <div class="flex items-center justify-between px-4 sm:px-6 py-3">
+          <a
+            href="../index.html"
+            class="font-serif text-white text-sm sm:text-base md:text-xl
+              tracking-[0.2em] no-underline shrink-0"
+          >
+            CONTOS DA ADEGA
+          </a>
+
+          <button
+            id="menuToggle"
+            class="lg:hidden text-white text-2xl bg-transparent border-0
+              cursor-pointer p-1 -mr-1"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <i class="bi bi-list" aria-hidden="true"></i>
+          </button>
+
+          <div
+            id="mobileMenu"
+            class="hidden lg:block absolute lg:static top-full left-0 w-full
+              lg:w-auto z-50 px-2 lg:px-0"
+          >
+            <ul
+              class="flex flex-col lg:flex-row lg:items-center list-none m-0
+                p-0 mt-1 lg:mt-0 bg-menu/[0.97] lg:bg-transparent
+                backdrop-blur-lg lg:backdrop-blur-none border border-gold/10
+                lg:border-none rounded-2xl lg:rounded-none
+                shadow-[0_16px_40px_rgba(0,0,0,0.7)] lg:shadow-none pb-2
+                lg:pb-0 lg:gap-5 xl:gap-6"
+            >
+              <li>
+                <a
+                  href="../index.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  Início
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="collection.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  A Coleção
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="club.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  Clube
+                </a>
+              </li>
+
+              <li class="lg:border-r lg:border-divider lg:pr-5 xl:pr-6">
+                <a
+                  href="sac.html"
+                  class="nav-link flex lg:inline-block items-center
+                    justify-center py-[0.8125rem] lg:py-0 px-6 lg:px-0
+                    text-base lg:text-sm rounded-[0.625rem] lg:rounded-none
+                    my-0.5 lg:my-0 mx-2 lg:mx-0 min-h-12 lg:min-h-0 text-soft
+                    no-underline transition-all duration-300
+                    hover:bg-gold/[0.08] lg:hover:bg-transparent
+                    hover:text-gold"
+                >
+                  SAC
+                </a>
+              </li>
+
+              <li
+                class="flex justify-center lg:items-center gap-8 lg:gap-5
+                  xl:gap-6 py-3 lg:py-0 mt-2 lg:mt-0 mx-2 lg:mx-0 border-t
+                  border-white/[0.05] lg:border-none"
+              >
+                <a
+                  href="#"
+                  class="text-soft hover:text-gold transition-colors
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0"
+                  aria-label="Buscar"
+                >
+                  <i class="bi bi-search" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-soft hover:text-gold transition-colors
+                    duration-300 text-xl lg:text-lg p-2 lg:p-0 lg:ml-1"
+                  aria-label="Minha conta"
+                  data-open-modal
+                >
+                  <i class="bi bi-person" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="pt-[6.5rem] md:pt-[7.5rem]">
+          <div class="flex items-end justify-between pb-8 md:pb-10">
+            <h1
+              class="font-serif text-[clamp(3rem,8vw,6.5rem)] leading-[0.9]
+                text-white tracking-[-0.02em]"
+            >
+              A Coleção
+            </h1>
+            <div class="text-right shrink-0 ml-8 hidden sm:block pb-1">
+              <p class="font-serif text-white text-3xl leading-none">16</p>
+              <p
+                class="text-wgray text-[0.6875rem] uppercase
+                  tracking-[0.14em] mt-1"
+              >
+                rótulos · 2026
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col sm:flex-row sm:items-center
+              justify-between gap-5 py-4 border-t border-b
+              border-white/[0.06]"
+          >
+            <p class="text-wgray text-sm shrink-0">
+              Curadoria de sommeliers entre os melhores rótulos do mundo.
+            </p>
+            <div
+              class="flex overflow-x-auto scrollbar-none gap-0 -mx-4 px-4
+                sm:mx-0 sm:px-0"
+              role="group"
+              aria-label="Filtrar por tipo"
+            >
+              <button
+                data-filter="all"
+                class="filter-tab bg-transparent border-0 border-b
+                  border-transparent text-wgray font-sans text-[0.6875rem]
+                  tracking-[0.14em] uppercase cursor-pointer py-1 mr-8
+                  transition-colors duration-300 hover:text-soft active
+                  whitespace-nowrap flex-shrink-0"
+                aria-pressed="true"
+              >
+                Todos
+              </button>
+              <button
+                data-filter="tinto"
+                class="filter-tab bg-transparent border-0 border-b
+                  border-transparent text-wgray font-sans text-[0.6875rem]
+                  tracking-[0.14em] uppercase cursor-pointer py-1 mr-8
+                  transition-colors duration-300 hover:text-soft
+                  whitespace-nowrap flex-shrink-0"
+                aria-pressed="false"
+              >
+                Tintos
+              </button>
+              <button
+                data-filter="branco"
+                class="filter-tab bg-transparent border-0 border-b
+                  border-transparent text-wgray font-sans text-[0.6875rem]
+                  tracking-[0.14em] uppercase cursor-pointer py-1 mr-8
+                  transition-colors duration-300 hover:text-soft
+                  whitespace-nowrap flex-shrink-0"
+                aria-pressed="false"
+              >
+                Brancos
+              </button>
+              <button
+                data-filter="espumante"
+                class="filter-tab bg-transparent border-0 border-b
+                  border-transparent text-wgray font-sans text-[0.6875rem]
+                  tracking-[0.14em] uppercase cursor-pointer py-1 mr-8
+                  transition-colors duration-300 hover:text-soft
+                  whitespace-nowrap flex-shrink-0"
+                aria-pressed="false"
+              >
+                Espumantes
+              </button>
+              <button
+                data-filter="rose"
+                class="filter-tab bg-transparent border-0 border-b
+                  border-transparent text-wgray font-sans text-[0.6875rem]
+                  tracking-[0.14em] uppercase cursor-pointer py-1
+                  transition-colors duration-300 hover:text-soft
+                  whitespace-nowrap flex-shrink-0"
+                aria-pressed="false"
+              >
+                Rosés
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="wineGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8
+            gap-y-14 sm:gap-x-10 sm:gap-y-16"
+        >
+          <article class="wine-card group cursor-default" data-type="tinto">
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/tinto.jpg"
+                alt="Château Margaux"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Tinto · 2018
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Château Margaux
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Bordeaux · Cab. Sauvignon
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Grand Cru Classé. Taninos sedosos, cassis, tabaco e violeta.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="tinto">
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/tinto2.jpg"
+                alt="Barolo Riserva"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Tinto · 2016
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Barolo Riserva
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">Piemonte · Nebbiolo</p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              O Rei dos Vinhos. Poderoso, rosas secas e alcatrão nobre.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="tinto">
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/tinto3.jpg"
+                alt="Opus One"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Tinto · 2019
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Opus One
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Napa Valley · Cab. Sauvignon
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Joint venture lendária. Estrutura firme, frutas negras e cedro.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="tinto">
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-[#140606]
+                to-[#0a0101] mb-4"
+            ></div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Tinto · 2017
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Penfolds Grange
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Barossa Valley · Shiraz
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Ícone australiano. Shiraz intenso, amoras e especiarias.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="branco">
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/branco.jpg"
+                alt="Chablis Premier Cru"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Branco · 2020
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Chablis Premier Cru
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Chablis · Chardonnay
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Mineralidade excepcional. Pederneira, frutas brancas e acidez
+              viva.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="branco">
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/branco2.jpg"
+                alt="Riesling Auslese"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Branco · 2017
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Riesling Auslese
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">Mosel · Riesling</p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Doçura equilibrada. Pêssego, damasco e flor de laranjeira.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="branco">
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-[#110e06]
+                to-[#090701] mb-4"
+            ></div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Branco · 2019
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Puligny-Montrachet
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Bourgogne · Chardonnay
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Chardonnay supremo. Avelã, manteiga e mineralidade bourguignonne.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="branco">
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-[#110e06]
+                to-[#090701] mb-4"
+            ></div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Branco · 2021
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Cloudy Bay Sauvignon
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Marlborough · Sauvignon Blanc
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Frescor do Novo Mundo. Maracujá, limão e ervas frescas.
+            </p>
+          </article>
+
+          <article
+            class="wine-card group cursor-default"
+            data-type="espumante"
+          >
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/espumante.jpg"
+                alt="Dom Pérignon"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Espumante · 2013
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Dom Pérignon
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Champagne · Chardonnay
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Vintage de plenitude. Brioche tostado, fruta madura e borbulhas
+              finas.
+            </p>
+          </article>
+
+          <article
+            class="wine-card group cursor-default"
+            data-type="espumante"
+          >
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/espumante2.jpg"
+                alt="Franciacorta Satèn"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Espumante · 2019
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Franciacorta Satèn
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Lombardia · Chardonnay
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Espumante premium italiano. Suavidade aveludada e levedura fresca.
+            </p>
+          </article>
+
+          <article
+            class="wine-card group cursor-default"
+            data-type="espumante"
+          >
+            <div class="aspect-[3/4] overflow-hidden mb-4">
+              <img
+                src="../assets/images/collection/espumante3.jpg"
+                alt="Veuve Clicquot Brut"
+                class="w-full h-full object-cover opacity-70
+                  transition-[transform,opacity] duration-500
+                  group-hover:opacity-85 group-hover:scale-[1.04]"
+                loading="lazy"
+              >
+            </div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Espumante · NV
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Veuve Clicquot Brut
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">Reims · Blend</p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Champagne icônico. Maçã verde, baunilha e cremosidade persistente.
+            </p>
+          </article>
+
+          <article
+            class="wine-card group cursor-default"
+            data-type="espumante"
+          >
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-[#0c0c10]
+                to-[#060608] mb-4"
+            ></div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Espumante · 2015
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Cristal Roederer
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Champagne · Chardonnay
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Cuvée de prestígio. Elegância luminosa, frutas amarelas e
+              mineralidade.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="rose">
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-[#14070a]
+                to-[#0a0305] mb-4"
+            ></div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Rosé · 2022
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Whispering Angel
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">Provence · Grenache</p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              O rosé referência. Morango delicado, pêssego e flor de amêndoa.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="rose">
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-[#14070a]
+                to-[#0a0305] mb-4"
+            ></div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Rosé · 2022
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Miraval Studio Rosé
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">Provence · Cinsault</p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Vinhedo da Provença. Framboesa, grapefruit e final refrescante.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="rose">
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-[#14070a]
+                to-[#0a0305] mb-4"
+            ></div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Rosé · 2021
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Château d'Esclans
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">
+              Côtes de Provence · Grenache
+            </p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Rosé boutique. Complexidade rara, frutas vermelhas e toque
+              cremoso.
+            </p>
+          </article>
+
+          <article class="wine-card group cursor-default" data-type="rose">
+            <div
+              class="aspect-[3/4] bg-gradient-to-br from-[#14070a]
+                to-[#0a0305] mb-4"
+            ></div>
+            <p
+              class="text-[0.55rem] uppercase tracking-[0.2em] text-gold/45
+                mb-1.5"
+            >
+              Rosé · 2022
+            </p>
+            <h2
+              class="font-serif text-white text-sm sm:text-[0.9375rem]
+                leading-snug mb-1"
+            >
+              Minuty Prestige Rosé
+            </h2>
+            <p class="text-wgray/35 text-[0.68rem] mb-2">Provence · Grenache</p>
+            <p class="text-wgray/22 text-[0.67rem] leading-relaxed">
+              Terroir provençal puro. Delicado, cristalino e acidez elegante.
+            </p>
+          </article>
+
+          <p
+            id="emptyState"
+            class="hidden col-span-full text-center text-wgray py-24
+              font-serif text-xl"
+            role="status"
+            aria-live="polite"
+          >
+            Nenhum vinho encontrado.
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-white/[0.06] mt-16 md:mt-20">
+        <div
+          class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 flex
+            flex-col sm:flex-row items-start sm:items-center
+            justify-between gap-4"
+        >
+          <p class="text-wgray text-xs uppercase tracking-widest">
+            Receba vinhos todo mês · curadoria exclusiva
+          </p>
+          <a
+            href="club.html"
+            class="shrink-0 inline-flex items-center gap-2 text-gold
+              text-xs uppercase tracking-widest no-underline
+              hover:text-gold-l transition-colors duration-300 group"
+          >
+            Conhecer o Clube
+            <i
+              class="bi bi-arrow-right group-hover:translate-x-1
+                transition-transform duration-300"
+              aria-hidden="true"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="bg-fw text-white pt-12 sm:pt-16 pb-8 border-t
+        border-white/[0.05]"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div
+          class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1.5fr] gap-8
+            sm:gap-10 lg:gap-14 mb-10 sm:mb-12"
+        >
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-serif text-2xl lg:text-3xl mb-3 leading-tight">
+              CONTOS<br >DA ADEGA
+            </p>
+            <p class="text-wgray text-sm">Narrativas envelhecidas desde 1998</p>
+          </div>
+
+          <nav aria-label="Links do rodapé – Explorar">
+            <h2
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
+            >
+              Explorar
+            </h2>
+            <ul class="list-none m-0 p-0 space-y-2">
+              <li>
+                <a
+                  href="pages/collection.html"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >A Coleção</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pages/club.html"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >Clube da Adega</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >As Vozes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#process"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >O Processo</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Links do rodapé – Suporte">
+            <h2
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
+            >
+              Suporte
+            </h2>
+            <ul class="list-none m-0 p-0 space-y-2">
+              <li>
+                <a
+                  href="pages/sac.html"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >Contato</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pages/sac.html"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >SAC</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >Localização</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-wgray text-sm no-underline hover:text-white
+                    transition-colors duration-300"
+                  >Privacidade</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="col-span-2 sm:col-span-1 lg:col-span-1">
+            <h2
+              class="text-gold uppercase tracking-[0.2em] text-xs mb-3
+                sm:mb-4"
+            >
+              Crônicas da Adega
+            </h2>
+            <p class="text-wgray text-sm mb-4">Receba narrativas exclusivas</p>
+            <form class="flex w-full" aria-label="Newsletter">
+              <label for="newsletterEmail" class="sr-only">Seu e-mail</label>
+              <input
+                type="email"
+                id="newsletterEmail"
+                name="newsletter-email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+                class="min-w-0 flex-1 bg-white/[0.05] border border-white/10
+                  rounded-l-full px-3 sm:px-4 py-2 text-white text-sm
+                  outline-none transition-colors duration-300
+                  focus:border-gold placeholder:text-white/20"
+              >
+              <button
+                type="submit"
+                class="flex-shrink-0 bg-gold text-dw border-0 px-4 sm:px-6
+                  py-2 rounded-r-full font-semibold text-sm cursor-pointer
+                  transition-colors duration-300 hover:bg-gold-l"
+                aria-label="Inscrever"
+              >
+                →
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between
+            gap-3 border-t border-white/[0.05] pt-5"
+        >
+          <small class="text-white/40 text-xs text-center sm:text-left">
+            &copy; 2026 Contos da Adega. Todos os direitos reservados.
+          </small>
+          <ul class="flex gap-4 list-none m-0 p-0">
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
+                aria-label="Twitter / X"
+                ><i class="bi bi-twitter-x" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
+                aria-label="Instagram"
+                ><i class="bi bi-instagram" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
+                aria-label="YouTube"
+                ><i class="bi bi-youtube" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-wgray hover:text-gold text-lg sm:text-xl
+                  transition-colors duration-300"
+                aria-label="LinkedIn"
+                ><i class="bi bi-linkedin" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="authModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div
+        class="relative w-full max-w-md max-h-[90vh] overflow-y-auto
+          bg-modal/[0.96] backdrop-blur-xl border border-gold-l/[0.15]
+          rounded-2xl overflow-hidden
+          shadow-[0_1.875rem_3.75rem_rgba(0,0,0,0.8)]"
+      >
+        <div
+          class="h-[3px] bg-gradient-to-r from-gold-d via-gold to-gold-d"
+          aria-hidden="true"
+        ></div>
+        <button
+          id="closeModal"
+          class="absolute top-4 right-4 text-white/60 hover:text-white
+            text-xl bg-transparent border-0 cursor-pointer z-10
+            transition-colors duration-300 p-1"
+          aria-label="Fechar"
+        >
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+        <div class="text-center pt-8 pb-3 px-4">
+          <h2
+            id="modalTitle"
+            class="font-serif text-gold tracking-[0.15em] text-base"
+          >
+            CONTOS DA ADEGA
+          </h2>
+          <p class="text-wgray text-sm mt-1">Acesse sua coleção</p>
+        </div>
+        <div
+          class="flex justify-center gap-8 px-4 mb-4"
+          role="tablist"
+          aria-label="Autenticação"
+        >
+          <button
+            class="auth-tab text-gold bg-transparent text-xs uppercase
+              tracking-widest cursor-pointer border-0 active"
+            data-target="#loginPane"
+            role="tab"
+            aria-controls="loginPane"
+            aria-selected="true"
+          >
+            Entrar
+          </button>
+          <button
+            class="auth-tab text-wgray bg-transparent text-xs uppercase
+              tracking-widest cursor-pointer border-0"
+            data-target="#registerPane"
+            role="tab"
+            aria-controls="registerPane"
+            aria-selected="false"
+          >
+            Registrar
+          </button>
+        </div>
+        <div class="px-6 pb-8">
+          <div id="authMessage" class="hidden" role="alert"></div>
+          <div id="loginPane" class="tab-pane active" role="tabpanel">
+            <form id="loginForm" class="flex flex-col gap-4">
+              <div>
+                <label
+                  for="loginEmail"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="loginEmail"
+                  name="email"
+                  class="custom-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <label for="loginPassword" class="text-wgray text-xs ml-1"
+                    >Senha</label
+                  >
+                  <a
+                    href="#"
+                    class="text-gold text-xs no-underline hover:underline"
+                    >Esqueceu?</a
+                  >
+                </div>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="password"
+                  class="custom-input"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                  required
+                  minlength="6"
+                >
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 bg-gold text-dw font-bold uppercase
+                  tracking-widest text-xs rounded-full cursor-pointer
+                  border-0 hover:bg-gold-l transition-colors duration-300"
+              >
+                Entrar
+              </button>
+            </form>
+          </div>
+          <div id="registerPane" class="tab-pane" role="tabpanel">
+            <form id="registerForm" class="flex flex-col gap-4">
+              <div>
+                <label for="regName" class="text-wgray text-xs block mb-1 ml-1"
+                  >Nome Completo</label
+                >
+                <input
+                  type="text"
+                  id="regName"
+                  name="name"
+                  class="custom-input"
+                  placeholder="Seu nome completo"
+                  autocomplete="name"
+                  required
+                  minlength="3"
+                >
+              </div>
+              <div>
+                <label for="regEmail" class="text-wgray text-xs block mb-1 ml-1"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="regEmail"
+                  name="email"
+                  class="custom-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+              <div>
+                <label for="regPhone" class="text-wgray text-xs block mb-1 ml-1"
+                  >Telefone/WhatsApp</label
+                >
+                <input
+                  type="tel"
+                  id="regPhone"
+                  name="phone"
+                  class="custom-input"
+                  placeholder="+55 (11) 9 9999-0000"
+                  autocomplete="tel"
+                  required
+                >
+              </div>
+              <div>
+                <label for="regCpf" class="text-wgray text-xs block mb-1 ml-1"
+                  >CPF</label
+                >
+                <input
+                  type="text"
+                  id="regCpf"
+                  name="cpf"
+                  class="custom-input"
+                  placeholder="000.000.000-00"
+                  required
+                  pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                  title="Formato: 000.000.000-00"
+                >
+              </div>
+              <div>
+                <label for="regDob" class="text-wgray text-xs block mb-1 ml-1"
+                  >Data de Nascimento</label
+                >
+                <input
+                  type="date"
+                  id="regDob"
+                  name="dob"
+                  class="custom-input"
+                  required
+                >
+              </div>
+              <div>
+                <label
+                  for="regEstado"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Estado</label
+                >
+                <select
+                  id="regEstado"
+                  name="estado"
+                  class="custom-input"
+                  required
+                >
+                  <option value="" disabled selected>Selecione o estado</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AM">AM</option>
+                  <option value="AP">AP</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MG">MG</option>
+                  <option value="MS">MS</option>
+                  <option value="MT">MT</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="PR">PR</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="RS">RS</option>
+                  <option value="SC">SC</option>
+                  <option value="SE">SE</option>
+                  <option value="SP">SP</option>
+                  <option value="TO">TO</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="regPassword"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Senha</label
+                >
+                <input
+                  type="password"
+                  id="regPassword"
+                  name="password"
+                  class="custom-input"
+                  placeholder="Crie uma senha"
+                  autocomplete="new-password"
+                  required
+                  minlength="6"
+                >
+                <div class="password-strength mt-2">
+                  <div class="password-strength-bar" id="strengthBar"></div>
+                </div>
+                <small
+                  id="strengthText"
+                  class="text-xs ml-1"
+                  aria-live="polite"
+                ></small>
+              </div>
+              <div>
+                <label
+                  for="regConfirmPassword"
+                  class="text-wgray text-xs block mb-1 ml-1"
+                  >Confirmar Senha</label
+                >
+                <input
+                  type="password"
+                  id="regConfirmPassword"
+                  name="confirmPassword"
+                  class="custom-input"
+                  placeholder="Repita a senha"
+                  autocomplete="new-password"
+                  required
+                  minlength="6"
+                >
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 bg-gold text-dw font-bold uppercase
+                  tracking-widest text-xs rounded-full cursor-pointer
+                  border-0 hover:bg-gold-l transition-colors duration-300"
+              >
+                Criar Conta
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastNotif" role="status" aria-live="polite">
+      <span id="toastBody" class="text-sm"></span>
+      <button
+        id="toastClose"
+        class="bg-transparent border-0 text-white/50 hover:text-white
+          cursor-pointer text-lg flex-shrink-0 p-1"
+        aria-label="Fechar"
+      >
+        &times;
+      </button>
+    </div>
+
+    <script src="../js/script.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.filter-tab')
+        const cards = document.querySelectorAll('.wine-card')
+        const emptyMsg = document.getElementById('emptyState')
+
+        tabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            const filter = tab.dataset.filter
+
+            tabs.forEach((t) => {
+              const active = t === tab
+              t.classList.toggle('active', active)
+              t.setAttribute('aria-pressed', active ? 'true' : 'false')
+            })
+
+            let visible = 0
+            cards.forEach((card) => {
+              const show = filter === 'all' || card.dataset.type === filter
+              card.style.display = show ? '' : 'none'
+              if (show) visible++
+            })
+
+            emptyMsg.classList.toggle('hidden', visible > 0)
+          })
+        })
+      })
+    </script>
+  </body>
+</html>
