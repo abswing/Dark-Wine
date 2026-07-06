@@ -1,4 +1,10 @@
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,js}",
+    "./pages/**/*.{html,js}",
+    "./index.html"
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -29,4 +35,5 @@ tailwind.config = {
       transitionDuration: { 400: '400ms' },
     },
   },
+  plugins: [],
 }
