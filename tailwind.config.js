@@ -1,4 +1,6 @@
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+const config = {
+  content: ['./index.html', './pages/**/*.html'],
   theme: {
     extend: {
       fontFamily: {
@@ -30,4 +32,11 @@ tailwind.config = {
     },
   },
   plugins: [],
+}
+
+// Node (Tailwind IntelliSense / build tooling) vs browser (Tailwind CDN script)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = config;
+} else {
+  tailwind.config = config;
 }
