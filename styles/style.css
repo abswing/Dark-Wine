@@ -35,8 +35,6 @@
   }
 }
 
-/* ── Nav link underline (desktop only — mobile uses
-   background + text color instead, see .mobile-active below) ── */
 @media (min-width: 64rem) {
   .nav-link {
     position: relative;
@@ -51,6 +49,7 @@
     background: #c9923a;
     transition: width 0.3s ease;
   }
+  /* nav-link:hover::after or nav-link.active-link::after*/
   .nav-link:hover::after,
   .nav-link.active-link::after {
     width: 100%;
@@ -60,11 +59,7 @@
   color: #c9923a;
 }
 
-/* ── Mobile menu ──────────────────────────────────
-   Below lg (matches Tailwind's 64rem breakpoint minus 1px), JS toggles
-   `.open` to reveal the menu. At lg and up, Tailwind's `lg:block` utility
-   takes over — this rule must stay scoped to the media query or its ID
-   specificity would beat `.lg\:block` and hide the menu on desktop too. */
+
 @media (max-width: 63.9375rem) {
   #mobileMenu {
     display: none;
